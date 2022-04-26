@@ -1,0 +1,86 @@
+<div class="main">
+  <div class="left-container" *ngIf="exit" @leftState>
+    <div class="header-login">
+      <h1>Bienvenido</h1>
+    </div>
+    <div class="form-container mt-5">
+      <img src="assets/build/svg/profile_avatar.svg" alt="" />
+      <h3>Iniciar sesión</h3>
+
+      <form class="col-6" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <input
+          placeholder="Email"
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          required
+          formControlName="email"
+        />
+        <div
+          *ngIf="
+            loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']
+          "
+          class="invalid-form"
+        >
+          <img
+            src="assets/build/images/error.png"
+            alt=""
+            style="width: 24px; height: 24px"
+          />
+          <span>Este campo es obligatorio</span>
+        </div>
+        <input
+          placeholder="Contraseña"
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          required
+          formControlName="password"
+        />
+        <div
+          *ngIf="
+            loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']
+          "
+          class="invalid-form"
+        >
+          <img
+            src="assets/build/images/error.png"
+            alt=""
+            style="width: 24px; height: 24px"
+          />
+          <span>Este campo es obligatorio</span>
+        </div>
+        <div class="login-button">
+          <button
+            (click)="login()"
+            type="submit"
+            class="btn-login"
+            [disabled]="loginForm.invalid"
+            style="width: 100%"
+          >
+            Iniciar sesion
+          </button>
+        </div>
+      </form>
+      <div class="register-option col-6">
+        <span>o</span>
+        <button
+          type="button"
+          class="btn-signup"
+          style="width: 100%"
+          (click)="signUpPage()"
+        >
+          Registrate
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-container" *ngIf="exit" @rightState>
+    <div class="header-login">
+      <h1>InMedic</h1>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="main">
+  <div class="left-container" @leftState>
+    <div class="header-login">
+      <h1>InMedic</h1>
+    </div>
+  </div>
+  <div class="right-container" @rightState style="width: 40%">
+    <div class="header-signup">
+      <h1>Bienvenido</h1>
+    </div>
+    <div class="option-container mt-2">
+      <img src="assets/build/svg/profile_avatar.svg" alt="" />
+      <h3>Regístrate</h3>
+    </div>
+    <div class="options" *ngIf="options" @optionsState>
+      <div class="btn-options" (click)="selectRole()">Médico</div>
+      <div class="btn-options" (click)="selectRole()">Usuario</div>
+    </div>
+    <!-- <router-outlet></router-outlet> -->
+    <app-signup-client *ngIf="clientForm"></app-signup-client>
+  </div>
+</div>
