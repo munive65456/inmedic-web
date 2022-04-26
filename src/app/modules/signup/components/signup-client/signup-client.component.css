@@ -1,0 +1,83 @@
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .pager{
+  display: flex;
+}
+
+.container .pager img{
+  margin: 8px;
+  width: 24px;
+  height: 24px;
+}
+.form-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.invalid-form{
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.invalid-form span{
+  margin-left: 3px;
+  font-size: 14px;
+  color: red;
+}
+
+form input{
+  width: 100%;
+  max-width: 410px;
+  height: 48px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  color: #2a1d1f;
+  padding-left: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #898989;
+  transition: all linear 300ms;
+}
+
+form input:focus{
+  outline: none;
+  border-color: 1px solid #00B0FF;
+  background: #ffffff;
+}
+
+.show-password{
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 410px;
+  height: 48px;
+  background: #d4d4d4;
+  border-radius: 10px;
+  color: #838383;
+  padding-left: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #898989;
+  transition: all linear 300ms;
+}
+
+.city-container{
+  display: flex;
+}
+
+.login-button{
+  width: 100%;
+}
+
+.next-back-button{
+  display: flex;
+}
