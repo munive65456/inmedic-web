@@ -1,0 +1,16 @@
+:rot{
+  /* Colors */
+  --background: #f5f5f5;
+  --primary:  #0099ff;
+  --neutro: #555;
+  --neutro100: #bb6060;
+  --neutro400: #898989;
+  --neutro700: #2a1d1f;
+
+  /*  */
+  --border:5px;
+
+  /* Fonts */
+  --semi: 'a_semibold', sans-serif;
+  --text: 'a_regular', sans-serif;
+}

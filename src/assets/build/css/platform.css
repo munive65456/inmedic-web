@@ -1,0 +1,33 @@
+@import './styles.css';
+
+
+form input{
+  margin-top: 20px;
+}
+
+
+.btn-login{
+  margin-top: 20px;
+  height: 48px;
+  border-radius: 10px;
+  background: #00B0FF;
+  color: #f5f5f5;
+}
+
+.btn-login:disabled{
+  background: #007fb9;
+}
+
+
+.btn-signup{
+  margin-top: 10px;
+  height: 48px;
+  border-radius: 10px;
+  background: #f5f5f5;
+  color: #00B0FF;
+  border: 1px solid #00B0FF;
+}
+
+.btn-signup:hover{
+  background: #fffdfd;
+}

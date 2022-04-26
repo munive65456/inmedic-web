@@ -12,6 +12,9 @@ export class SignupClientComponent implements OnInit {
 
   page: number = 1;
 
+  opcionSeleccionado: string  = '0'; // Iniciamos
+  verSeleccion: string        = '';
+
   constructor(private readonly fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -30,6 +33,9 @@ export class SignupClientComponent implements OnInit {
       address: [''],
       city: [''],
       state: [''],
+      documentNumber: [''],
+      gender: [''],
+      birthDate: [''],
     })
   }
 
@@ -38,6 +44,12 @@ export class SignupClientComponent implements OnInit {
   }
   back(){
     this.page--;
+  }
+
+  capturar() {
+    this.verSeleccion = this.opcionSeleccionado;
+    console.log(this.verSeleccion);
+    
   }
 
 }
