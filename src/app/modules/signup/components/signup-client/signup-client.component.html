@@ -174,7 +174,6 @@
         />
         <span>Este campo es obligatorio</span>
       </div>
-
       <!-- Input City And State-->
       <div class="city-container">
         <!-- Input City -->
@@ -199,20 +198,52 @@
           formControlName="state"
         />
       </div>
+      <div class="doc-container" *ngIf="page === 3">
+        <select name="doc" id="doc" class="form-select doc form-select-sm">
+          <option [selected]="true" value="C.C">C.C</option>
+          <option value="T.I">T.I</option>
+          <option value="Other">Otro</option>
+        </select>
 
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Número de documento"
+          id="document"
+          name="document"
+          formControlName="document"
+        />
+      </div>
+
+      <!-- Input Gender -->
+      <select
+        *ngIf="page === 3"
+        name="gender"
+        id="gender"
+        class="form-select gender form-select-sm"
+      >
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="no">Prefiero no decirlo</option>
+      </select>
+
+      <!-- Input Birthdate -->
+      <input
+        *ngIf="page === 3"
+        type="date"
+        class="form-control"
+        id="birthdate"
+        name="birthdate"
+        formControlName="birthdate"
+      />
       <!-- Next Button -->
       <div class="next-back-button">
         <div class="login-button" *ngIf="page > 1" style="margin-right: 5px">
-          <button
-            (click)="back()"
-            class="btn-login"
-            [disabled]="userForm.invalid"
-            style="width: 100%"
-          >
+          <button (click)="back()" class="btn-login" style="width: 100%">
             Atrás
           </button>
         </div>
-        <div class="login-button">
+        <div class="login-button" *ngIf="page < 3">
           <button
             (click)="next()"
             type="submit"
@@ -221,6 +252,16 @@
             style="width: 100%"
           >
             Siguiente
+          </button>
+        </div>
+        <div class="login-button" *ngIf="page === 3">
+          <button
+            type="submit"
+            class="btn-login"
+            [disabled]="userForm.invalid"
+            style="width: 100%"
+          >
+            Registrarme
           </button>
         </div>
       </div>

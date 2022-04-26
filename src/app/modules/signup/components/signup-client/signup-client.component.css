@@ -74,6 +74,40 @@ form input:focus{
   display: flex;
 }
 
+.doc-container{
+  display: flex;
+}
+
+.doc{
+  border-radius: 10px;
+  border: 1px solid #898989;
+  margin-top: 20px;
+  height: 48px;
+  width: 80px;
+  margin-right: 5px;
+  background-color: #f5f5f5;
+}
+
+.gender{
+  border-radius: 10px;
+  border: 1px solid #898989;
+  margin-top: 20px;
+  height: 48px;
+  width: 100%;
+  margin-right: 5px;
+  background-color: #f5f5f5;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
 .login-button{
   width: 100%;
 }

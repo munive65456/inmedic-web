@@ -30,6 +30,9 @@ export class SignupClientComponent implements OnInit {
       address: [''],
       city: [''],
       state: [''],
+      document: [''],
+      gender: [''],
+      birthdate: [''],
     })
   }
 
