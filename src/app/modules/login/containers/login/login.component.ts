@@ -4,7 +4,8 @@ import { UserModel } from 'src/app/core/models/user.model';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { trigger,style, transition,animate, state } from '@angular/animations';
-import { timer } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -39,16 +40,24 @@ import { timer } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
+  subscription: Subscription;
+  page: string;
+
   exit = true;
   loginForm: FormGroup;
 
   user: UserModel;
   rememberme: boolean;
 
-  constructor(private readonly fb: FormBuilder, private authService: AuthService, private router: Router) { }
+  constructor(
+      private readonly fb: FormBuilder,
+      private authService: AuthService,
+      private router: Router,
+      private dataService: DataService) { }
 
   ngOnInit(): void {
     this.loginForm = this.initForm();
+    this.getPage();
   }
 
   initForm(): FormGroup{
@@ -85,6 +94,10 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/signup']);
     })
 
+  }
+
+  getPage(){
+    this.subscription = this.dataService.share.subscribe(get => this.page = get)
   }
 
 }

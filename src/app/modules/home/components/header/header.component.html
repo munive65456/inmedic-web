@@ -1,0 +1,31 @@
+<div class="main">
+  <div class="logo">
+    <div class="logo-img">
+      <img src="assets/build/images/icons/logo.png" alt="" />
+    </div>
+    <span>InMedic</span>
+  </div>
+  <div class="options-container">
+    <div
+      class="header-options"
+      [ngClass]="{ selected: page === 'home' }"
+      (click)="changePage('home')"
+    >
+      <span>Home</span>
+    </div>
+    <div
+      class="header-options"
+      [ngClass]="{ selected: page === 'about-us' }"
+      (click)="changePage('about-us')"
+    >
+      <span>Servicios </span>
+    </div>
+    <div
+      class="header-options"
+      [ngClass]="{ selected: page === 'review' }"
+      (click)="changePage('review')"
+    >
+      <span>Reseñas</span>
+    </div>
+  </div>
+</div>

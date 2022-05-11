@@ -8,18 +8,17 @@
 }
 
 .right-container{
-  padding-top: 15px;
-  width: 60%;
+  width: 70%;
   min-height: 100vh;
-  background-color: #00B0FF;
-  border-radius: 20px 0 0 20px;
+  /* background-color: #F5f5f5; */
+  background-image: linear-gradient(to right, #eff9ff, white);
   -webkit-box-shadow: 0 10px 23px rgb(0 0 0 / 40%);
       -moz-box-shadow: 0px 0px 29px -18px rgba(0, 0, 0, 0.39);
       box-shadow: 0 10px 23px rgb(0 0 0 / 40%);
 }
 .left-container{
   padding-top: 15px;
-  width: 40%;
+  width: 30%;
   min-height: 100vh;
   background-color: #f5f5f5;
 }
