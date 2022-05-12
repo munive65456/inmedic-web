@@ -1,0 +1,48 @@
+main{
+  margin: 16px 16px 0 16px;
+}
+
+.services-title{
+  margin-top: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.services-title .title{
+  font-size: 140px;
+  font-weight: 600;
+}
+.services-title .subtitle{
+  font-size: 18px;
+  font-weight: 400;
+  width: 250px;
+  margin-left: 50px;
+}
+
+.services-body{
+  margin: 0 50px;
+}
+
+.services-item{
+  border-top: 2px solid #000;
+  padding: 36px 0;
+}
+
+.services-item{
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-title{
+  margin-bottom: 30px;
+}
+
+.info-body{
+  /* width: ; */
+}
+
+
+.more img{
+  width: 240px;
+}
