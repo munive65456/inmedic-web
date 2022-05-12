@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/container/home/home.component';
 import { HomePageComponent } from './home/components/home-page/home-page.component';
 import { HeaderComponent } from './home/components/header/header.component';
-import { AboutUsComponent } from './home/components/about-us/about-us.component';
+import { ServicesComponent } from './home/components/services/services.component';
 
 
 
@@ -11,11 +11,11 @@ const components = [
   HomeComponent,
   HomePageComponent,
   HeaderComponent,
-  AboutUsComponent
+  ServicesComponent
 ]
 
 @NgModule({
-  declarations: [...components],
+  declarations: [...components, ServicesComponent],
   imports: [
     CommonModule,
   ],
