@@ -5,9 +5,9 @@
 .left-container{
   z-index: 1;
   padding-top: 15px;
-  width: 60%;
+  width: 70%;
   min-height: 100vh;
-  background-color: #00B0FF;
+  background-image: linear-gradient(to right, #eff9ff, white);
   border-radius: 0 20px 20px 0;
   -webkit-box-shadow: 0 10px 23px rgb(0 0 0 / 40%);
       -moz-box-shadow: 0px 0px 29px -18px rgba(0, 0, 0, 0.39);
@@ -15,6 +15,7 @@
 }
 
 .right-container{
+  width: 30%;
   padding-top: 15px;
   min-height: 100vh;
   background: #f5f5f5;
