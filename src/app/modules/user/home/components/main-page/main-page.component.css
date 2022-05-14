@@ -1,0 +1,177 @@
+main{
+  margin: 32px 120px;
+}
+
+.info{
+  width: 40%;
+  margin-top: 50px;
+}
+
+.banner{
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-side{
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container-img{
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+}
+
+.blue-rectangle{
+  background-image: linear-gradient(to right, #00B0FF, #7dd6ff);
+  height: 90%;
+  width: 90%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 50%;
+}
+
+.image{
+  position: absolute;
+  background-image: url('../../../../../../assets/build/images/big/doctor_transparent3.png');
+  background-size: cover;
+  width: 94%;
+  height: 100%;
+  left: 18%;
+  z-index: 2;
+}
+
+.infoMessage{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 15px;
+  width: 300px;
+  height: 75px;
+  border-radius: 15px;
+  left: -20px;
+  position: absolute;
+  -webkit-box-shadow: 0 10px 23px rgb(0 0 0 / 40%);
+      -moz-box-shadow: 0px 0px 29px -18px rgba(0, 0, 0, 0.39);
+      box-shadow: 0 10px 23px rgb(0 0 0 / 40%);
+}
+
+.one{
+  background-color: #fff;
+  bottom: 210px;
+}
+
+.two{
+  bottom: 110px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(50px);
+  border: 3px solid #1db7ff;
+}
+
+.three{
+  bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(50px);
+  border: 3px solid #1db7ff;
+}
+
+.info span{
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.info p{
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.icon img{
+  width: 36px;
+  height: 36px;
+  border-radius: 15px;
+}
+
+.info-text{
+  margin-left: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  width: 110px;
+}
+
+.two .info-text{
+  color: white;
+}
+.three .info-text{
+  color: white;
+}
+
+.icons-info img{
+  /* position: absolute; */
+  width: 64px;
+  border-radius: 50%;
+  /* border:3.5px solid #1db7ff; */
+}
+
+.icons-info .white{
+  border:3.5px solid #1db7ff;
+}
+
+.filter-container{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  margin-top: 70px;
+  z-index: 5;
+}
+
+.filter-container .filter-bg{
+  padding: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-image: linear-gradient(to top, #00B0FF, #7dd6ff);
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.filter-bg input{
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.search-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  background-image: linear-gradient(to top, #00B0FF, #7dd6ff);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.search-btn:hover{
+  background-image: linear-gradient(to top, #009de6, #4ac3fc);
+}
+
+.search-btn img{
+  width: 30px;
+}
+
+
+
+
