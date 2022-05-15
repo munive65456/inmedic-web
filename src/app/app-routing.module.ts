@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProfileModule } from './modules/profile/profile.module';
 
 
 const routes: Routes = [
@@ -10,7 +11,12 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren:() => import('./modules/signup/signup.module').then((m)=>m.SignupModule)
+  },
+  {
+    path: 'profile',
+    loadChildren:() => import('./modules/profile/profile.module').then((m)=>m.ProfileModule)
   }
+
 ];
 
 @NgModule({
