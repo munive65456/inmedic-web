@@ -9,3 +9,11 @@
 .card img {
     border-radius: 12px;
 }
+
+.card-body a {
+    width: 100%;
+}
+
+.card-body p {
+    font-size: 12px;
+}
