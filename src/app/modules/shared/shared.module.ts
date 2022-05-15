@@ -5,6 +5,7 @@ import { HomePageComponent } from './home/components/home-page/home-page.compone
 import { HeaderComponent } from './home/components/header/header.component';
 import { ServicesComponent } from './home/components/services/services.component';
 import { PublicHeaderComponent } from './public-header/public-header.component';
+import { DoctorPreviewComponent } from './home/components/doctor-preview/doctor-preview.component';
 
 
 
@@ -17,10 +18,10 @@ const components = [
 ]
 
 @NgModule({
-  declarations: [...components, ServicesComponent, PublicHeaderComponent],
+  declarations: [...components, ServicesComponent, PublicHeaderComponent, DoctorPreviewComponent],
   imports: [
     CommonModule,
   ],
-  exports: [...components]
+  exports: [...components, DoctorPreviewComponent]
 })
 export class SharedModule { }
