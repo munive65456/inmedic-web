@@ -1,3 +1,11 @@
 :hover.card-hover {
-    border-color: #00B0FF;
+    border: 3px solid #00B0FF;
+}
+
+.card {
+    border-radius: 12px;
+}
+
+.card img {
+    border-radius: 12px;
 }
