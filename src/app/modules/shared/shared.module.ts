@@ -5,6 +5,7 @@ import { HomePageComponent } from './home/components/home-page/home-page.compone
 import { HeaderComponent } from './home/components/header/header.component';
 import { ServicesComponent } from './home/components/services/services.component';
 import { PublicHeaderComponent } from './public-header/public-header.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -13,11 +14,12 @@ const components = [
   HomePageComponent,
   HeaderComponent,
   ServicesComponent,
-  PublicHeaderComponent
+  PublicHeaderComponent,
+  LoaderComponent
 ]
 
 @NgModule({
-  declarations: [...components, ServicesComponent, PublicHeaderComponent],
+  declarations: [...components, ServicesComponent, PublicHeaderComponent, LoaderComponent],
   imports: [
     CommonModule,
   ],
