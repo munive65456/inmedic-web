@@ -10,7 +10,7 @@ export class AuthService{
 
   login(user:any){
     return this.http.post(
-      environment.URL_CLIENT + environment.host.ms_security.methods.login,
+      environment.URL_GLOBAL + environment.host.ms_security.methods.login,
       user
     )
   }
