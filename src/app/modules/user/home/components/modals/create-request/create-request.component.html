@@ -1,0 +1,67 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="assets/build/images/icons/logo.png" alt="">
+                <h5 class="modal-title" id="exampleModalLabel">Solicite su cita aquí</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" class="form-control" formControlName="name" id="name" placeholder="Nombre completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="cc">CC</label>
+                        <input type="text" class="form-control" formControlName="cc" id="cc" placeholder="Número de cédula">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">edad</label>
+                        <input type="text" class="form-control" formControlName="age" id="age" placeholder="edad (número)">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Descripción (opcional)</label>
+                        <textarea class="form-control" id="description" placeholder="Descripción (opcional)"></textarea>
+                    </div>
+                    <div class="dropdowns">
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                              Dropdown link
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                              Dropdown link
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>
