@@ -15,47 +15,39 @@
             <div class="modal-body">
                 <form [formGroup]="form">
                     <div class="form-group">
-                        <label for="name">Nombre Completo</label>
+                        <label for="name">Nombre Completo:</label>
                         <input type="text" class="form-control" formControlName="name" id="name" placeholder="Nombre completo">
                     </div>
                     <div class="form-group">
-                        <label for="cc">CC</label>
+                        <label for="cc">CC:</label>
                         <input type="text" class="form-control" formControlName="cc" id="cc" placeholder="Número de cédula">
                     </div>
                     <div class="form-group">
-                        <label for="age">edad</label>
+                        <label for="age">edad:</label>
                         <input type="text" class="form-control" formControlName="age" id="age" placeholder="edad (número)">
                     </div>
                     <div class="form-group">
-                        <label for="description">Descripción (opcional)</label>
+                        <label for="description">Descripción (opcional):</label>
                         <textarea class="form-control" id="description" placeholder="Descripción (opcional)"></textarea>
                     </div>
                     <div class="dropdowns">
-                        <div class="dropdown">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                              Dropdown link
-                            </a>
-
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                              Dropdown link
-                            </a>
-
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
+                        <select class="form-select" formControlName="servicioSelected" (change)="printServicio()" aria-label="Default select example">
+                            <option [ngValue]="null" disabled>Seleccione el servicio</option>
+                            <option *ngFor="let servicio of servicios" [ngValue]="servicio.value">
+                               {{servicio.name}}
+                            </option>
+                        </select>
+                        <select class="form-select" formControlName="modalidadSelected" (change)="printModalidad()" aria-label="Default select example">
+                            <option [ngValue]="null" disabled>Seleccione la modalidad</option>
+                            <option *ngFor="let modalidad of modalidades" [ngValue]="modalidad.value">
+                                {{modalidad.name}}
+                             </option>
+                        </select>
                     </div>
-
-                    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+                    <div class="bottom-buttons">
+                        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
