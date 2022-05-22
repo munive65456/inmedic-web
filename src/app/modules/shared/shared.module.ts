@@ -6,6 +6,7 @@ import { HeaderComponent } from './home/components/header/header.component';
 import { ServicesComponent } from './home/components/services/services.component';
 import { PublicHeaderComponent } from './public-header/public-header.component';
 import { DoctorPreviewComponent } from './home/components/doctor-preview/doctor-preview.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -14,11 +15,12 @@ const components = [
   HomePageComponent,
   HeaderComponent,
   ServicesComponent,
-  PublicHeaderComponent
+  PublicHeaderComponent,
+  LoaderComponent
 ]
 
 @NgModule({
-  declarations: [...components, ServicesComponent, PublicHeaderComponent, DoctorPreviewComponent],
+  declarations: [...components, ServicesComponent, PublicHeaderComponent, DoctorPreviewComponent, LoaderComponent],
   imports: [
     CommonModule,
   ],

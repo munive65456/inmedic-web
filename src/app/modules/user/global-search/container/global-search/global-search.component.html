@@ -1,0 +1,14 @@
+<app-public-header *ngIf="!loader"></app-public-header>
+
+<app-loader *ngIf="loader"></app-loader>
+
+<main *ngIf="!loader">
+  <h2>Resultados de tu busqueda</h2>
+  <div class="results">
+    <app-card-preview></app-card-preview>
+    <app-card-preview></app-card-preview>
+    <app-card-preview></app-card-preview>
+    <app-card-preview></app-card-preview>
+    <app-card-preview></app-card-preview>
+  </div>
+</main>
