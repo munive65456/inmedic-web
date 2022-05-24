@@ -4,7 +4,6 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './container/home/home.component';
 import { SharedModule } from '../../shared/shared.module';
 import { MainPageComponent } from './components/main-page/main-page.component';
-import { CreateRequestComponent } from './components/modals/create-request/create-request.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -12,7 +11,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     HomeComponent,
     MainPageComponent,
-    CreateRequestComponent,
   ],
   imports: [
     CommonModule,
@@ -20,6 +18,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
 })
 export class HomeModule { }

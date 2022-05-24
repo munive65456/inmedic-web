@@ -22,3 +22,7 @@ img {
     justify-content: end;
     gap: 10px;
 }
+
+::ng-deep .cdk-overlay-container mat-datepicker-content {
+    z-index: 2000;
+}

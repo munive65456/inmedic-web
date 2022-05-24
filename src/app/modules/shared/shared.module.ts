@@ -7,8 +7,12 @@ import { ServicesComponent } from './home/components/services/services.component
 import { PublicHeaderComponent } from './public-header/public-header.component';
 import { DoctorPreviewComponent } from './home/components/doctor-preview/doctor-preview.component';
 import { LoaderComponent } from './loader/loader.component';
+import { CreateRequestComponent } from './modals/create-request/create-request.component';
 
-
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const components = [
   HomeComponent,
@@ -16,14 +20,19 @@ const components = [
   HeaderComponent,
   ServicesComponent,
   PublicHeaderComponent,
-  LoaderComponent
+  LoaderComponent,
 ]
 
 @NgModule({
-  declarations: [...components, ServicesComponent, PublicHeaderComponent, DoctorPreviewComponent, LoaderComponent],
+  declarations: [...components, ServicesComponent, PublicHeaderComponent, DoctorPreviewComponent, LoaderComponent, CreateRequestComponent],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    
   ],
-  exports: [...components, DoctorPreviewComponent]
+  exports: [...components, DoctorPreviewComponent, CreateRequestComponent]
 })
 export class SharedModule { }

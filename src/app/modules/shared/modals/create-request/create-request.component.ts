@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, NgControlStatus } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-create-request',
   templateUrl: './create-request.component.html',
-  styleUrls: ['./create-request.component.css']
+  styleUrls: ['./create-request.component.scss']
 })
 export class CreateRequestComponent implements OnInit {
 
@@ -29,6 +30,7 @@ export class CreateRequestComponent implements OnInit {
       name: ['', Validators.required],
       cc: ['', Validators.required],
       age: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
+      date: ['', Validators.required],
       description: [''],
       servicioSelected: [null],
       modalidadSelected: [null]
@@ -44,4 +46,7 @@ export class CreateRequestComponent implements OnInit {
     console.log(this.modalidades[this.form.get('modalidadSelected')?.value].name);
   }
 
+  printDate(){
+    console.log(this.form.get('date')?.value);
+  }
 }
