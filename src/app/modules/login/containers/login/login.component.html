@@ -1,4 +1,5 @@
-<div class="main">
+<app-loader *ngIf="loader"></app-loader>
+<div class="main" *ngIf="!loader">
   <div class="left-container" *ngIf="exit" @leftState>
     <div class="stay-div" style="position: sticky; top: 15px">
       <div class="header-login">

@@ -40,6 +40,8 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class LoginComponent implements OnInit {
 
+  loader= false;
+
   subscription: Subscription;
   page: string;
 
@@ -56,8 +58,16 @@ export class LoginComponent implements OnInit {
       private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.validateLogin();
     this.loginForm = this.initForm();
     this.getPage();
+  }
+
+  validateLogin(){
+    let role = localStorage.getItem('user.role');
+    if(role){
+      this.loginAccess(role);
+    }
   }
 
   initForm(): FormGroup{
@@ -73,14 +83,17 @@ export class LoginComponent implements OnInit {
 
   login(){
     if(!this.loginForm.invalid){
+      this.loader = true;
       const user = {
         email: this.loginForm.get('email')?.value,
         password: this.loginForm.get('password')?.value
       }
       this.authService.login(user)
       .subscribe(
-        (res)=>{
-          console.log('response=> ',res)
+        (res: any)=>{
+          this.authService.saveLogin(res.data.accessToken,res.data.role,res.data.userId);
+          this.loginAccess(res.data.role);
+
         }
       )
     }
@@ -94,6 +107,17 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/signup']);
     })
 
+  }
+
+  loginAccess(role: string){
+    switch(role){
+      case "user":
+        this.router.navigate(['/user/home']);
+        this.loader = false;
+        break;
+      case "":
+        break;
+    }
   }
 
   getPage(){

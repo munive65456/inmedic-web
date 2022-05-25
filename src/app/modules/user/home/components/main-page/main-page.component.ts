@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../../../services/search.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,12 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  globalSearch: string = "";
+  city: string;
+
+  constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
   }
 
-  testing(){
-    console.log('WORKS!')
+  search(){
+    if(this.globalSearch.length){
+      const searchForm = {
+        search: this.globalSearch
+      }
+      try{
+        this.searchService.mainSearch(searchForm)
+        .subscribe(
+          (res) =>{
+            console.log('RES => ',res)
+          }
+        )
+      }catch(error){
+
+      }
+    }
   }
 }

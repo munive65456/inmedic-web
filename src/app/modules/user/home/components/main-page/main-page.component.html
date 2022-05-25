@@ -43,16 +43,22 @@
 <div class="filter-container">
   <div class="filter-bg">
     <div class="main-search col-6">
-      <input class="main" placeholder="Realiza tu busqueda" type="text" />
+      <input
+        class="main"
+        placeholder="Realiza tu busqueda"
+        [(ngModel)]="globalSearch"
+        type="text"
+      />
     </div>
     <div class="location-search col-5">
       <input
         type="text"
-        placeholder="Filtra por tu ubicación"
+        placeholder="Filtra por tu ciudad"
+        (ngModel)="(city)"
         class="location"
       />
     </div>
-    <div class="search-btn" [routerLink]="['/user/search']">
+    <div class="search-btn" (click)="search()" [routerLink]="['/user/search']">
       <img src="assets/build/images/icons/search3.png" alt="" />
     </div>
   </div>
