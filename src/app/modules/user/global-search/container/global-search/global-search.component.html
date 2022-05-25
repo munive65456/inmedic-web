@@ -5,10 +5,26 @@
 <main *ngIf="!loader">
   <h2>Resultados de tu busqueda</h2>
   <div class="results">
-    <app-card-preview></app-card-preview>
-    <app-card-preview></app-card-preview>
-    <app-card-preview></app-card-preview>
-    <app-card-preview></app-card-preview>
-    <app-card-preview></app-card-preview>
+    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
+    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
+    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
+    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
+    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
+    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
+    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
+    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
   </div>
 </main>
+<div class="filter-container" *ngIf="!loader">
+  <div class="filter-bg">
+    <div class="main-search col-6">
+      <input class="main" placeholder="Realiza tu busqueda" type="text" />
+    </div>
+    <div class="location-search col-5">
+      <input type="text" placeholder="Filtra por tu ciudad" class="location" />
+    </div>
+    <div class="search-btn" [routerLink]="['/user/search']">
+      <img src="assets/build/images/icons/search3.png" alt="" />
+    </div>
+  </div>
+</div>

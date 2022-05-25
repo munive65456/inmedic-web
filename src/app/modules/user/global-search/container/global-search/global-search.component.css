@@ -8,7 +8,57 @@ main{
 
 .results{
   margin-top: 36px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap;
+  display: flex;
+  justify-content: center; */
+}
+
+.filter-container{
+  width: 100%;
+  height: 100px;
   display: flex;
   justify-content: center;
+  position: fixed;
+  bottom: 0;
+  margin-top: 70px;
+  z-index: 5;
+}
+
+.filter-container .filter-bg{
+  padding: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-image: linear-gradient(to top, #00B0FF, #7dd6ff);
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.filter-bg input{
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.search-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  background-image: linear-gradient(to top, #00B0FF, #7dd6ff);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.search-btn:hover{
+  background-image: linear-gradient(to top, #009de6, #4ac3fc);
+}
+
+.search-btn img{
+  width: 30px;
 }
