@@ -1,9 +1,13 @@
 const securityMethods={
-  login: 'login/'
+  login: 'user/login/'
+}
+
+const searchMethods={
+  globalSearch: 'client/services/'
 }
 
 export const host = {
   ms_security:{
-    methods: securityMethods,
+    methods: securityMethods, searchMethods
   }
 }

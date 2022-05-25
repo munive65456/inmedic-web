@@ -4,6 +4,8 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './container/home/home.component';
 import { SharedModule } from '../../shared/shared.module';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -14,7 +16,8 @@ import { MainPageComponent } from './components/main-page/main-page.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class HomeModule { }
