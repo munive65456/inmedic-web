@@ -7,7 +7,7 @@
     <span>Nombre del doctor</span>
 </div>
 <div class="body">
-    <div class="section-1">
+    <section class="section-1">
         <div class="wim">
             <span>¿Quién soy?</span>
             <div class="description">
@@ -24,9 +24,9 @@
                 </p>
             </div>
         </div>
-    </div>
+    </section>
     <div class="bar"></div>
-    <div class="section-2">
+    <section class="section-2">
         <div class="services">
             <span>Servicios que ofrezco</span>
             <div class="description">
@@ -49,9 +49,29 @@
         <div class="btn-cita">
             <button class="cita" (click)="showModal()">Agendar cita</button>
         </div>
-    </div>
+    </section>
     <div class="bar"></div>
-    <div class="section-3"></div>
+    <section class="section-3">
+        <div *ngIf="true">
+            <div *ngFor="let review of reviews">
+                <div class="card" style="width: 95%;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{review.name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{review.date}}</h6>
+                        <p class="card-text">{{review.text}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="false">
+            <div class="card" style="width: 95%;">
+                <div class="card-body">
+                    <h5 class="card-title">Aún no hay reseñas</h5>
+                    <p class="card-text">Luego de tener su cita con el doctor <strong>Nombre Apellido</strong> lo invitamos a crear una nueva reseña con su opinión para ayudar a otros usuarios a mejorar su experiencia</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 <!-- Button trigger modal -->

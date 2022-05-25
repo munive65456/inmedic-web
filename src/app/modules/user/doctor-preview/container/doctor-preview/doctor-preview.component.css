@@ -1,99 +1,108 @@
-header{
-  padding: 16px;
-  position: sticky;
-  top: 0;
+header {
+    padding: 16px;
+    position: sticky;
+    top: 0;
 }
 
-header img{
-  width: 42px;
-  cursor: pointer;
+header img {
+    width: 42px;
+    cursor: pointer;
 }
 
-.profile{
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+.profile {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
- .profile img{
-  width: 160px;
+.profile img {
+    width: 160px;
 }
 
-.body{
-  padding: 32px 32px 0;
-  display: flex;
-  justify-content: space-between;
+.body {
+    padding: 32px 32px 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-.bar{
-  width: 5px;
-  background-color: #00B0FF;
-  border-radius: 3px;
+.bar {
+    width: 5px;
+    background-color: #00B0FF;
+    border-radius: 3px;
 }
+
 
 /**
 Section 1 styles
 **/
 
-.section-1{
-  width: 30%;
+.section-1 {
+    width: 30%;
+}
 
+.description {
+    margin: 8px 0;
+    padding: 4px;
+    border: 2px solid #ababab;
+    background-color: #f2feff;
+    border-radius: 5px;
 }
- .description{
-  margin: 8px 0;
-  padding: 4px;
-  border: 2px solid #ababab;
-  background-color: #f2feff;
-  border-radius: 5px;
-}
+
 
 /**
 Section 2 styles
 **/
 
-.section-2{
-  width: 30%;
+.section-2 {
+    width: 30%;
 }
 
-
-
-.description li{
-  margin-top: 8px;
+.description li {
+    margin-top: 8px;
 }
 
-.modality{
-  display: flex;
-  flex-direction: column;
+.modality {
+    display: flex;
+    flex-direction: column;
 }
 
-.modality-answ{
-  margin-left: 14px;
-  margin-top: 4px;
+.modality-answ {
+    margin-left: 14px;
+    margin-top: 4px;
 }
 
-.btn-cita{
-  margin-top: 36px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.btn-cita {
+    margin-top: 36px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.section-2 .cita{
-  width: 70%;
-  border-radius: 15px;
-  height: 38px;
-  background-color: #7dd6ff;
-  border: 2px solid #00B0FF;
+.section-2 .cita {
+    width: 70%;
+    border-radius: 15px;
+    height: 38px;
+    background-color: #7dd6ff;
+    border: 2px solid #00B0FF;
 }
 
-.section-2 .cita:hover{
-  background-color: #00B0FF;
+.section-2 .cita:hover {
+    background-color: #00B0FF;
 }
 
-.section-3{
-  height: 400px;
-  width: 30%;
+.section-3 {
+    height: 400px;
+    width: 30%;
+    overflow: auto;
 }
 
+.card {
+    margin-bottom: 10px;
+    border: 1px solid #00B0FF;
+    border-radius: 8px;
+}
+
+.card-text {
+    font-size: 13px;
+}
