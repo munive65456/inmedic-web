@@ -7,16 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public page = "home";
-
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  getPage(page: string){
-    this.page = page;
-    console.log('PAGE => ',page)
   }
 
 }

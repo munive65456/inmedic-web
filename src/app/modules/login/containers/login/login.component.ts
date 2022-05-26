@@ -115,7 +115,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/user/home']);
         this.loader = false;
         break;
-      case "":
+      case "doctor":
+        this.router.navigate(['/doctor/home']);
         break;
     }
   }

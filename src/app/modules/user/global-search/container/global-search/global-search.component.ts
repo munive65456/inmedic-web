@@ -41,7 +41,9 @@ export class GlobalSearchComponent implements OnInit {
   }
 
   search(){
+
     if(this.globalSearch.length || this.city.length){
+      console.log('ENTRO')
       this.loader=true;
       const searchForm = {
         search: this.globalSearch,
@@ -57,9 +59,11 @@ export class GlobalSearchComponent implements OnInit {
           }
         )
       }catch(error){
-
+        console.log('ERROR')
+        this.loader = false;
       }
     }
+    this.loader = false;
   }
 
   seeDoctorInfo(id: any){
