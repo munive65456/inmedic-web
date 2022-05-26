@@ -1,58 +1,62 @@
-main{
-  margin: 32px 64px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+main {
+    margin: 32px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo{
-  display: flex;
-  align-items: center;
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-.logo span{
-  margin-left: 7px;
-  font-size: 32px;
-  font-weight: 500;
+:hover.logo {
+    cursor: pointer;
 }
 
-.logo-img{
-  width: 50px;
-  border-right: 3px solid #00B0FF;
+.logo span {
+    margin-left: 7px;
+    font-size: 32px;
+    font-weight: 500;
 }
 
-.logo-img img{
-  width: 40px;
+.logo-img {
+    width: 50px;
+    border-right: 3px solid #00B0FF;
 }
 
-.options{
-  display: flex;
+.logo-img img {
+    width: 40px;
 }
 
-.options .profile{
-  display: flex;
-  align-items: center;
-  margin-right: 32px;
-  color: #00B0FF;
-  cursor: pointer;
+.options {
+    display: flex;
 }
 
-.options .profile:hover{
-  color: #0286c4;
+.options .profile {
+    display: flex;
+    align-items: center;
+    margin-right: 32px;
+    color: #00B0FF;
+    cursor: pointer;
 }
 
-.options .singup{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #00B0FF;
-  min-width: 130px;
-  height: 40px;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
+.options .profile:hover {
+    color: #0286c4;
 }
 
-.options .singup:hover{
-  background-color: #0286c4;
+.options .singup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00B0FF;
+    min-width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.options .singup:hover {
+    background-color: #0286c4;
 }

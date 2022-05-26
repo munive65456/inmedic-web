@@ -1,12 +1,12 @@
 <main>
-  <div class="logo">
-    <div class="logo-img">
-      <img src="assets/build/images/icons/logo.png" alt="" />
+    <div class="logo" [routerLink]="['/user/home']">
+        <div class="logo-img">
+            <img src="assets/build/images/icons/logo.png" alt="" />
+        </div>
+        <span>InMedic</span>
     </div>
-    <span>InMedic</span>
-  </div>
-  <div class="options">
-    <div class="profile">Perfil</div>
-    <div class="singup" (click)="logOut()">Cerrar sesión</div>
-  </div>
+    <div class="options">
+        <div class="profile">Perfil</div>
+        <div class="singup" (click)="logOut()">Cerrar sesión</div>
+    </div>
 </main>

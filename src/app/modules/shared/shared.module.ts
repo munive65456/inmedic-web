@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+//import { AppRoutingModule } from 'src/app/app-routing.module';
+import { RouterModule } from '@angular/router';
 
 const components = [
   HomeComponent,
@@ -31,7 +33,8 @@ const components = [
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    
+    //AppRoutingModule,
+    RouterModule  
   ],
   exports: [...components, DoctorPreviewComponent, CreateRequestComponent]
 })
