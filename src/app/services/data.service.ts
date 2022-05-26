@@ -5,12 +5,12 @@ import { BehaviorSubject } from "rxjs";
     providedIn: 'root',
 })
 export class DataService{
-    private content = new BehaviorSubject<string>("Default Content");
+    private content = new BehaviorSubject<any>("");
     public share = this.content.asObservable();
 
     constructor(){ }
 
-    updateData(data$: string){
+    updateData(data$: any){
         this.content.next(data$);
     }
 }

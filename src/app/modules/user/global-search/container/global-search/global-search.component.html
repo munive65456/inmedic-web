@@ -5,25 +5,35 @@
 <main *ngIf="!loader">
   <h2>Resultados de tu busqueda</h2>
   <div class="results">
-    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
-    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
-    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
-    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
-    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
-    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
-    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
-    <app-card-preview class="d-flex justify-content-center"></app-card-preview>
+    <app-card-preview
+      class="d-flex justify-content-center"
+      *ngFor="let item of resultado || resultSearch"
+      [data]="item"
+    ></app-card-preview>
+  </div>
+  <div class="no-results" *ngIf="!resultado && !resultSearch">
+    <p>No hay resultados, prueba buscando de nuevo</p>
   </div>
 </main>
 <div class="filter-container" *ngIf="!loader">
   <div class="filter-bg">
     <div class="main-search col-6">
-      <input class="main" placeholder="Realiza tu busqueda" type="text" />
+      <input
+        class="main"
+        placeholder="Realiza tu busqueda"
+        [(ngModel)]="globalSearch"
+        type="text"
+      />
     </div>
     <div class="location-search col-5">
-      <input type="text" placeholder="Filtra por tu ciudad" class="location" />
+      <input
+        type="text"
+        placeholder="Filtra por tu ciudad"
+        [(ngModel)]="city"
+        class="location"
+      />
     </div>
-    <div class="search-btn" [routerLink]="['/user/search']">
+    <div class="search-btn" (click)="search()">
       <img src="assets/build/images/icons/search3.png" alt="" />
     </div>
   </div>

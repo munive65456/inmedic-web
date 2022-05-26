@@ -1,4 +1,5 @@
-<main>
+<app-loader *ngIf="loader"></app-loader>
+<main *ngIf="!loader">
   <div class="banner">
     <div class="info">
       <span>Bienvenido a InMedic</span>
@@ -40,7 +41,7 @@
     </div>
   </div>
 </main>
-<div class="filter-container">
+<div class="filter-container" *ngIf="!loader">
   <div class="filter-bg">
     <div class="main-search col-6">
       <input
@@ -54,11 +55,11 @@
       <input
         type="text"
         placeholder="Filtra por tu ciudad"
-        (ngModel)="(city)"
+        [(ngModel)]="city"
         class="location"
       />
     </div>
-    <div class="search-btn" (click)="search()" [routerLink]="['/user/search']">
+    <div class="search-btn" (click)="search()">
       <img src="assets/build/images/icons/search3.png" alt="" />
     </div>
   </div>
