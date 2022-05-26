@@ -45,6 +45,10 @@
   align-items: center;
 }
 
+.name{
+  font-weight: 700;
+}
+
 .go img{
-  width: 80px;
+  width: 80%;
 }

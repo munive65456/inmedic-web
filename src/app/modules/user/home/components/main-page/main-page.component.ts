@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../../services/search.service';
+import { DataService } from 'src/app/services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
@@ -8,24 +10,32 @@ import { SearchService } from '../../../services/search.service';
 })
 export class MainPageComponent implements OnInit {
 
+  resultSearch:any;
   globalSearch: string = "";
-  city: string;
+  city: string = "";
+  loader = false;
 
-  constructor(private searchService: SearchService) { }
+  constructor(private searchService: SearchService,
+              private dataService: DataService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
   search(){
-    if(this.globalSearch.length){
+    if(this.globalSearch.length || this.city.length){
+      this.loader=true;
       const searchForm = {
-        search: this.globalSearch
+        search: this.globalSearch,
+        city: this.city
       }
       try{
         this.searchService.mainSearch(searchForm)
         .subscribe(
-          (res) =>{
-            console.log('RES => ',res)
+          (res: any) =>{
+            this.resultSearch = res.data;
+            this.dataService.updateData(this.resultSearch);
+            this.router.navigate(['/user/search'])
           }
         )
       }catch(error){

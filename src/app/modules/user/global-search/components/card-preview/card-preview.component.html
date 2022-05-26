@@ -1,8 +1,8 @@
-<div class="card col-8" [routerLink]="['../preview/doctor', 0]">
+<div class="card col-8" (click)="seeDoctorInfo()">
   <div class="profile">Profile</div>
   <div class="info">
-    <div class="name">Nombre del médico</div>
-    <div class="preview">Descripción breve del médico</div>
+    <div class="name">{{ data.name }}</div>
+    <div class="preview">{{ data.description }}</div>
   </div>
   <div class="go">
     <img src="assets/build/images/icons/next.png" alt="" />

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-preview',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardPreviewComponent implements OnInit {
 
-  constructor() { }
+  @Input() data: any;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  seeDoctorInfo(){
+    this.router.navigate(['user/preview/doctor', this.data.idDoctor])
   }
 
 }
