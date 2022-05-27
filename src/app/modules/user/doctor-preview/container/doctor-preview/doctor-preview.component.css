@@ -31,7 +31,7 @@ header img {
 }
 
 .bar {
-    width: 5px;
+    width: 3px;
     background-color: #00B0FF;
     border-radius: 3px;
 }
@@ -50,11 +50,13 @@ Section 1 styles
 }
 
 .description {
-    margin: 8px 0;
+    margin: 16px 0;
     padding: 4px;
-    border: 2px solid #ababab;
-    background-color: #f2feff;
+    background-color: #FFF;
     border-radius: 5px;
+    -webkit-box-shadow: 0 10px 23px rgba(63, 175, 255, 0.4);
+      -moz-box-shadow: 0px 0px 29px -18px rgba(63, 175, 255, 0.80);
+      box-shadow: 0 10px 23px rgb(61 174 255 /30%);
 }
 
 

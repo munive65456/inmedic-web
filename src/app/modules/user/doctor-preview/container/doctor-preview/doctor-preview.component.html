@@ -1,86 +1,96 @@
 <header>
-    <img src="assets/build/images/icons/arrow.png" (click)="goBack()" alt="" />
+  <img src="assets/build/images/icons/arrow.png" (click)="goBack()" alt="" />
 </header>
 
 <div class="profile">
-    <img src="assets/build/svg/profile_avatar.svg" alt="" />
-    <span>Nombre del doctor</span>
-    <span class="gray">Ciudad</span>
+  <img src="assets/build/svg/profile_avatar.svg" alt="" />
+  <span>Nombre del doctor</span>
+  <span class="gray">Ciudad</span>
 </div>
 <div class="body">
-    <section class="section-1">
-        <div class="wim">
-            <span class="strong">¿Quién soy?</span>
-            <div class="description">
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est odit aperiam tempore corporis fugiat quidem autem maiores veniam eum accusantium accusamus eaque ab quod in, labore praesentium quas atque aut!
-                </p>
-            </div>
-        </div>
-        <div class="wm">
-            <span class="strong">¿Por qué elegirme?</span>
-            <div class="description">
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est odit aperiam tempore corporis fugiat quidem autem maiores veniam eum accusantium accusamus eaque ab quod in, labore praesentium quas atque aut!
-                </p>
-            </div>
-        </div>
-    </section>
-    <div class="bar"></div>
-    <section class="section-2">
-        <div class="services">
-            <span class="strong">Servicios que ofrezco</span>
-            <div class="description">
-                <ol>
-                    <li>Servicio 1</li>
-                    <li>Servicio 2</li>
-                    <li>Servicio 3</li>
-                    <li>Servicio 4</li>
-                    <li>Servicio 5</li>
-                </ol>
-            </div>
-        </div>
-        <div class="modality">
-            <span class="strong">Modalidad</span>
-            <span class="modality-answ">Virtual</span>
-            <span class="modality-answ">Presencial</span>
-            <span class="modality-answ">Virtual y presencial</span>
-        </div>
+  <section class="section-1">
+    <div class="wim">
+      <span class="strong">¿Quién soy?</span>
+      <div class="description">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est odit
+          aperiam tempore corporis fugiat quidem autem maiores veniam eum
+          accusantium accusamus eaque ab quod in, labore praesentium quas atque
+          aut!
+        </p>
+      </div>
+    </div>
+    <div class="wm">
+      <span class="strong">¿Por qué elegirme?</span>
+      <div class="description">
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est odit
+          aperiam tempore corporis fugiat quidem autem maiores veniam eum
+          accusantium accusamus eaque ab quod in, labore praesentium quas atque
+          aut!
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="bar"></div>
+  <section class="section-2">
+    <div class="services">
+      <span class="strong">Servicios que ofrezco</span>
+      <div class="description">
+        <ol>
+          <li>Servicio 1</li>
+          <li>Servicio 2</li>
+          <li>Servicio 3</li>
+          <li>Servicio 4</li>
+          <li>Servicio 5</li>
+        </ol>
+      </div>
+    </div>
 
-        <div class="btn-cita">
-            <button class="cita" (click)="showModal()">Agendar cita</button>
-        </div>
-    </section>
-    <div class="bar"></div>
-    <section class="section-3">
-        <span class="strong">Reseñas</span>
-        <div class="scrollable">
-            <div *ngIf="true">
-                <div *ngFor="let review of reviews">
-                    <div class="card" style="width: 95%;">
-                        <div class="card-body">
-                            <h5 class="card-title">{{review.name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{review.date}}</h6>
-                            <p class="card-text">{{review.text}}</p>
-                        </div>
-                    </div>
-                </div>
+    <div class="btn-cita">
+      <button class="cita" (click)="showModal()">Agendar cita</button>
+    </div>
+  </section>
+  <div class="bar"></div>
+  <section class="section-3">
+    <span class="strong">Reseñas</span>
+    <div class="scrollable">
+      <div *ngIf="true">
+        <div *ngFor="let review of reviews">
+          <div class="description" style="width: 95%; margin: 24px 0">
+            <div class="card-body">
+              <h5 class="card-title">{{ review.name }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ review.date }}</h6>
+              <p class="card-text">{{ review.text }}</p>
             </div>
-            <div *ngIf="false">
-                <div class="card" style="width: 95%;">
-                    <div class="card-body">
-                        <h5 class="card-title">Aún no hay reseñas</h5>
-                        <p class="card-text">Luego de tener su cita con el doctor <strong>Nombre Apellido</strong> lo invitamos a crear una nueva reseña con su opinión para ayudar a otros usuarios a mejorar su experiencia</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
+      <div *ngIf="false">
+        <div class="card" style="width: 95%">
+          <div class="card-body">
+            <h5 class="card-title">Aún no hay reseñas</h5>
+            <p class="card-text">
+              Luego de tener su cita con el doctor
+              <strong>Nombre Apellido</strong> lo invitamos a crear una nueva
+              reseña con su opinión para ayudar a otros usuarios a mejorar su
+              experiencia
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <!-- Button trigger modal -->
-<button #btnDetails type="button" hidden class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    
-</button>
+<button
+  #btnDetails
+  type="button"
+  hidden
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+></button>
 
 <app-create-request></app-create-request>

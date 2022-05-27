@@ -88,7 +88,9 @@ export class LoginComponent implements OnInit {
         email: this.loginForm.get('email')?.value,
         password: this.loginForm.get('password')?.value
       }
-      this.authService.login(user)
+      debugger;
+      try{
+        this.authService.login(user)
       .subscribe(
         (res: any)=>{
           this.authService.saveLogin(res.data.accessToken,res.data.role,res.data.userId);
@@ -96,6 +98,12 @@ export class LoginComponent implements OnInit {
 
         }
       )
+      }catch(error){
+        this.loader = false;
+        alert('Usuario no encontrado');
+        console.log('ERROR => ',error)
+      }
+
     }
   }
 

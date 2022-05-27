@@ -43,6 +43,8 @@ export class GlobalSearchComponent implements OnInit {
   search(){
 
     if(this.globalSearch.length || this.city.length){
+      this.resultado = null;
+      this.resultSearch = null;
       this.loader=true;
       const searchForm = {
         search: this.globalSearch,
