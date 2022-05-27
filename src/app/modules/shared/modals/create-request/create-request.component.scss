@@ -3,9 +3,35 @@ img {
     padding-right: 10px;
 }
 
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.form-check-input {
+    height: 20px;
+    width: 20px;
+}
+
+.label-checkbox {
+    margin-left: 10px;
+}
+
+form {
+    font-size: 12px;
+}
+
 .form-group input {
     margin: 0;
     margin-bottom: 12px;
+    height: 30px;
+}
+
+.form-group textarea {
+    height: 60px;
 }
 
 .dropdowns {
@@ -21,6 +47,7 @@ img {
     display: flex;
     justify-content: end;
     gap: 10px;
+    margin-bottom: 10px;
 }
 
 ::ng-deep .cdk-overlay-container mat-datepicker-content {
