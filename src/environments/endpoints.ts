@@ -3,7 +3,8 @@ const securityMethods={
 }
 
 const searchMethods={
-  globalSearch: 'client/services/'
+  globalSearch: 'client/services/',
+  profileDoctor: 'client/profile/'
 }
 
 export const host = {

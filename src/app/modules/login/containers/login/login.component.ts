@@ -82,14 +82,15 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    let boolTemp = false;
     if(!this.loginForm.invalid){
       this.loader = true;
       const user = {
         email: this.loginForm.get('email')?.value,
         password: this.loginForm.get('password')?.value
       }
-      debugger;
       try{
+        boolTemp = true;
         this.authService.login(user)
       .subscribe(
         (res: any)=>{
@@ -99,9 +100,12 @@ export class LoginComponent implements OnInit {
         }
       )
       }catch(error){
+
+        console.log('ERROR => ',error)
+      }
+      if(!boolTemp) {
         this.loader = false;
         alert('Usuario no encontrado');
-        console.log('ERROR => ',error)
       }
 
     }

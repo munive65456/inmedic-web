@@ -3,6 +3,7 @@
 .card{
   height: 95px;
   margin: 16px;
+  margin-bottom: 20px;
   border-radius: 55px;
   display: flex;
   flex-direction: row;
@@ -29,9 +30,11 @@
 }
 
 .info{
-  height: 80%px;
+  height: 100%;
   width: 80%;
-  border: 1px solid rgb(133, 133, 133);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .go{

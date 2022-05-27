@@ -1,53 +1,45 @@
-<header>
+<app-loader *ngIf="loader"></app-loader>
+
+<header *ngIf="!loader">
   <img src="assets/build/images/icons/arrow.png" (click)="goBack()" alt="" />
 </header>
 
-<div class="profile">
+<div class="profile" *ngIf="!loader">
   <img src="assets/build/svg/profile_avatar.svg" alt="" />
-  <span>Nombre del doctor</span>
+  <span>{{ doctorInfo?.name }}</span>
   <span class="gray">Ciudad</span>
 </div>
-<div class="body">
+<div class="body" *ngIf="!loader">
   <section class="section-1">
-    <div class="wim">
+    <div class="wim" *ngIf="doctorInfo?.description2">
       <span class="strong">¿Quién soy?</span>
       <div class="description">
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est odit
-          aperiam tempore corporis fugiat quidem autem maiores veniam eum
-          accusantium accusamus eaque ab quod in, labore praesentium quas atque
-          aut!
+          {{ doctorInfo?.description }}
         </p>
       </div>
     </div>
-    <div class="wm">
+    <div class="wm" *ngIf="doctorInfo?.description2">
       <span class="strong">¿Por qué elegirme?</span>
       <div class="description">
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est odit
-          aperiam tempore corporis fugiat quidem autem maiores veniam eum
-          accusantium accusamus eaque ab quod in, labore praesentium quas atque
-          aut!
+          {{ doctorInfo?.description2 }}
         </p>
       </div>
     </div>
   </section>
   <div class="bar"></div>
   <section class="section-2">
-    <div class="services">
+    <div class="services" *ngIf="doctorInfo?.services">
       <span class="strong">Servicios que ofrezco</span>
       <div class="description">
         <ol>
-          <li>Servicio 1</li>
-          <li>Servicio 2</li>
-          <li>Servicio 3</li>
-          <li>Servicio 4</li>
-          <li>Servicio 5</li>
+          <li *ngFor="let item of doctorInfo?.services">{{ item }}</li>
         </ol>
       </div>
     </div>
 
-    <div class="btn-cita">
+    <div class="btn-cita" *ngIf="doctorInfo?.services">
       <button class="cita" (click)="showModal()">Agendar cita</button>
     </div>
   </section>

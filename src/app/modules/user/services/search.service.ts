@@ -19,4 +19,13 @@ export class SearchService{
       }
     )
   }
+
+  getProfileDoctor(id:string){
+    return this.http.get(
+      environment.URL_GLOBAL + environment.host.ms_security.searchMethods.profileDoctor + id,
+      {
+        headers: this.authService.getBearerToken()
+      }
+    )
+  }
 }
