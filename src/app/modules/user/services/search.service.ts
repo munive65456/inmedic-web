@@ -28,4 +28,14 @@ export class SearchService{
       }
     )
   }
+
+  createRequest(request: any){
+    return this.http.post(
+      environment.URL_GLOBAL + environment.host.ms_security.searchMethods.createRequest,
+      request,
+      {
+        headers: this.authService.getBearerToken()
+      }
+    )
+  }
 }
