@@ -43,7 +43,6 @@ export class GlobalSearchComponent implements OnInit {
   search(){
 
     if(this.globalSearch.length || this.city.length){
-      console.log('ENTRO')
       this.loader=true;
       const searchForm = {
         search: this.globalSearch,
@@ -53,7 +52,11 @@ export class GlobalSearchComponent implements OnInit {
         this.searchService.mainSearch(searchForm)
         .subscribe(
           (res: any) =>{
-            this.resultSearch = res.data;
+            if(res.data?.length){
+              this.resultSearch = res.data;
+            }else{
+              alert('No encontramos médicos, por favor intentalo de nuevo')
+            }
             this.loader = false;
             // this.router.navigate(['/user/search'])
           }

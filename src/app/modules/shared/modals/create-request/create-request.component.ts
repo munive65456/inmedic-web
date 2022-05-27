@@ -36,7 +36,7 @@ export class CreateRequestComponent implements OnInit, OnChanges {
     currentUser: false,
     id: ""
   }
-  
+
 
   servicios = [
     { name: "ortodonxia", value: 0 },
@@ -58,7 +58,7 @@ export class CreateRequestComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log(this.check.get('checkbox')?.value);
   }
-  
+
   checkboxChange(){
     console.log(this.check.get('checkbox')?.value);
 
@@ -76,7 +76,7 @@ export class CreateRequestComponent implements OnInit, OnChanges {
       email: [''],
       date: ['', Validators.required],
       time: ['', Validators.required],
-      description: ['', Validators.required],
+      description: [''],
       servicioSelected: [null, Validators.required],
       modalidadSelected: [null, Validators.required]
     });
@@ -87,7 +87,7 @@ export class CreateRequestComponent implements OnInit, OnChanges {
       let cc = this.form.get('cc');
       let age = this.form.get('age');
       switch(r){
-        case true: 
+        case true:
           name?.setValidators([Validators.required]);
           cc?.setValidators([Validators.required]);
           age?.setValidators([Validators.required]);
@@ -95,14 +95,14 @@ export class CreateRequestComponent implements OnInit, OnChanges {
     })
   }
 
-  
+
   printServicio() {
     console.log(this.servicios[this.form.get('servicioSelected')?.value].name);
   }
 
   printModalidad() {
   }
-  
+
   printDate(){
     // console.log(this.form.get('date')?.value);
     // console.log(this.form.get('time')?.value);
@@ -128,10 +128,10 @@ export class CreateRequestComponent implements OnInit, OnChanges {
         this.success = 2;// se muestra success
         alert('success')
         //call service here
-      }  
+      }
     }else {
       //send form info
-      if(this.form.get('name')?.value != "" && this.form.get('cc')?.value != "" && this.form.get('age')?.value != "" && this.form.get('email')?.value != "" && this.form.get('date')?.value != "" && this.form.get('time')?.value != "" && this.form.get('description')?.value != "" && this.form.get('servicioSelected')?.value != "" && this.form.get('modalidadSelected')?.value != "" && localStorage.getItem('user.userId') != null){        
+      if(this.form.get('name')?.value != "" && this.form.get('cc')?.value != "" && this.form.get('age')?.value != "" && this.form.get('email')?.value != "" && this.form.get('date')?.value != "" && this.form.get('time')?.value != "" && this.form.get('description')?.value != "" && this.form.get('servicioSelected')?.value != "" && this.form.get('modalidadSelected')?.value != "" && localStorage.getItem('user.userId') != null){
         this.requestForm = {
           name: this.form.get('name')?.value,
           cc: this.form.get('cc')?.value,
@@ -152,7 +152,7 @@ export class CreateRequestComponent implements OnInit, OnChanges {
       }
     }
   }
-  
+
   showForm(){
     if(this.check.get('checkbox')?.value == true){
       // if(this.form.get('name')?.value != "" && this.form.get('cc')?.value != "" && this.form.get('age')?.value != "" && this.form.get('email')?.value != "" && this.form.get('date')?.value != "" && this.form.get('time')?.value != "" && this.form.get('description')?.value != "" && this.form.get('servicioSelected')?.value != "" && this.form.get('modalidadSelected')?.value != "" && localStorage.getItem('user.userId') != null){

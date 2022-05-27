@@ -1,78 +1,160 @@
 <!-- Modal -->
-<div class="modal fade modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <img src="assets/build/images/icons/logo.png" alt="">
-                <h5 class="modal-title" id="exampleModalLabel">Solicite su cita aquí</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form [formGroup]="check" class="checkbox">
-                    <input #checkbox class="form-check-input" (change)="showForm()" formControlName="checkbox" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label label-checkbox" for="flexCheckDefault">
-                        ¿La cita es para alguien más?
-                    </label>
-                </form>
-                <form [formGroup]="form">
-                    <div *ngIf="!show" class="form-group">
-                        <label for="name">Nombre Completo:</label>
-                        <input type="text" class="form-control" formControlName="name" id="name" placeholder="Nombre completo">
-                    </div>
-                    <div *ngIf="!show" class="form-group">
-                        <label for="cc">CC:</label>
-                        <input type="text" class="form-control" formControlName="cc" id="cc" placeholder="Número de cédula">
-                    </div>
-                    <div *ngIf="!show" class="form-group">
-                        <label for="age">edad:</label>
-                        <input type="text" class="form-control" formControlName="age" id="age" placeholder="edad (número)">
-                    </div>
-                    <div *ngIf="!show" class="form-group">
-                        <label for="age">email:</label>
-                        <input type="email" class="form-control" formControlName="email" id="email" placeholder="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Seleccione la fecha: </label>
-                        <input type="date" class="form-control" formControlName="date" id="date">
-                    </div>
-                    <div class="form-group">
-                        <label for="time">Seleccione la hora: </label>
-                        <input type="time" class="form-control" formControlName="time" id="time">
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Descripción (opcional):</label>
-                        <textarea class="form-control" formControlName="description" id="description" placeholder="Descripción (opcional)"></textarea>
-                    </div>
-                    <div class="dropdowns">
-                        <select class="form-select" formControlName="servicioSelected" (change)="printServicio()" aria-label="Default select example">
-                            <option [value]="null" disabled>Seleccione el servicio</option>
-                            <option *ngFor="let servicio of servicios" [value]="servicio.value">
-                               {{servicio.name}}
-                            </option>
-                        </select>
-                        <select class="form-select" formControlName="modalidadSelected" (change)="printModalidad()" aria-label="Default select example">
-                            <option [value]="null" disabled>Seleccione la modalidad</option>
-                            <option *ngFor="let modalidad of modalidades" [value]="modalidad.value">
-                                {{modalidad.name}}
-                             </option>
-                        </select>
-                    </div>
+<div
+  class="modal fade modal-dialog-scrollable"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="assets/build/images/icons/logo.png" alt="" />
+        <h5 class="modal-title" id="exampleModalLabel">
+          Solicite su cita aquí
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="check" class="checkbox">
+          <input
+            #checkbox
+            class="form-check-input"
+            (change)="showForm()"
+            formControlName="checkbox"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label label-checkbox" for="flexCheckDefault">
+            ¿La cita es para alguien más?
+          </label>
+        </form>
+        <form [formGroup]="form">
+          <div *ngIf="!show" class="form-group">
+            <label for="name">Nombre Completo:</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="name"
+              id="name"
+              placeholder="Nombre completo"
+            />
+          </div>
+          <div *ngIf="!show" class="form-group">
+            <label for="cc">CC:</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="cc"
+              id="cc"
+              placeholder="Número de cédula"
+            />
+          </div>
+          <div *ngIf="!show" class="form-group">
+            <label for="age">edad:</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="age"
+              id="age"
+              placeholder="edad (número)"
+            />
+          </div>
+          <div *ngIf="!show" class="form-group">
+            <label for="age">email:</label>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="email"
+              id="email"
+              placeholder="email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="date">Seleccione la fecha: </label>
+            <input
+              type="date"
+              class="form-control"
+              formControlName="date"
+              id="date"
+            />
+          </div>
+          <div class="form-group">
+            <label for="time">Seleccione la hora: </label>
+            <input
+              type="time"
+              class="form-control"
+              formControlName="time"
+              id="time"
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Descripción (opcional):</label>
+            <textarea
+              class="form-control"
+              formControlName="description"
+              id="description"
+              placeholder="Descripción (opcional)"
+            ></textarea>
+          </div>
+          <div class="dropdowns">
+            <select
+              class="form-select"
+              formControlName="servicioSelected"
+              (change)="printServicio()"
+              aria-label="Default select example"
+            >
+              <option [value]="null" disabled>Seleccione el servicio</option>
+              <option
+                *ngFor="let servicio of servicios"
+                [value]="servicio.value"
+              >
+                {{ servicio.name }}
+              </option>
+            </select>
+            <select
+              class="form-select"
+              formControlName="modalidadSelected"
+              (change)="printModalidad()"
+              aria-label="Default select example"
+            >
+              <option [value]="null" disabled>Seleccione la modalidad</option>
+              <option
+                *ngFor="let modalidad of modalidades"
+                [value]="modalidad.value"
+              >
+                {{ modalidad.name }}
+              </option>
+            </select>
+          </div>
 
-                    <div class="bottom-buttons">
-                        <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="submit()">Enviar solicitud</button>
-                    </div>
-                </form>
-                <div class="date-picker">
-                    <!-- <input matInput [matDatepicker]="picker">
+          <div class="bottom-buttons">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="form.invalid"
+              (click)="submit()"
+            >
+              Enviar solicitud
+            </button>
+          </div>
+        </form>
+        <div class="date-picker">
+          <!-- <input matInput [matDatepicker]="picker">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker> -->
-
-                </div>
-            </div>
-            <!-- <div class="modal-footer">
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
             </div> -->
-        </div>
     </div>
+  </div>
 </div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'preview',
     loadChildren: () => import('./doctor-preview/doctor-preview.module').then((m)=>m.DoctorPreviewModule)
+  },
+  {
+    path: 'notifications',
+    component: NotificationsComponent
   }
 ];
 
