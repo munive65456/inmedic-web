@@ -12,7 +12,7 @@ export class SignupClientComponent implements OnInit {
   userForm: FormGroup;
 
   page: number = 1;
-  
+
 
   formInfo = {
     name: "",
@@ -113,7 +113,6 @@ export class SignupClientComponent implements OnInit {
       this.service.signup(this.userInfo)
       .subscribe(
         (res:any)=>{
-          console.log(res);         
         }
       )
     }catch(err){

@@ -19,6 +19,15 @@ export class DoctorService{
     )
   }
 
+  approveDate(data: any){
+    return this.http.post(
+      environment.URL_GLOBAL + environment.host.appointments.methods.approveDate,
+      data,
+      {
+        headers: this.authService.getBearerToken()
+      }
+    )
+  }
   rechazarCita(params:any){
     return this.http.post(
       environment.URL_GLOBAL + environment.host.ms_security.searchMethods.rechazarCita,
