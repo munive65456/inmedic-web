@@ -1,3 +1,9 @@
+import { host } from "./endpoints";
+
 export const environment = {
-  production: true
+  production: false,
+  name: 'dev',
+  URL_GLOBAL: 'https://inmedic.herokuapp.com/',
+  host
 };
+
