@@ -110,10 +110,15 @@
           </div>
 
           <div class="bottom-buttons">
-            <button type="button" class="btn btn-primary" (click)="aceptar()">
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="approveDate()"
+              data-bs-dismiss="modal"
+            >
               Aceptar solicitud
             </button>
-            <button type="button" class="btn btn-info" (click)="rechazar()">
+            <button type="button" class="btn btn-danger" (click)="rechazar()">
               Rechazar solicitud
             </button>
           </div>
@@ -141,17 +146,6 @@
       </div>
     </div>
 
-    <div class="bottom-buttons">
-      <button
-        type="button"
-        class="btn btn-success"
-        (click)="approveDate()"
-        data-bs-dismiss="modal"
-      >
-        Aceptar solicitud
-      </button>
-      <button type="button" class="btn btn-danger">Rechazar solicitud</button>
-    </div>
     <div class="date-picker"></div>
   </div>
 </div>

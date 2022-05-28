@@ -31,11 +31,24 @@ export class ConfirmComponent implements OnInit {
 
   approveDate(){
     if(this.infoCita?.tipoConsult === 'virtual'){
-
       this.btnApproveModal.nativeElement.click();
-    console.log(this.infoCita);
+  }else{
+    this.aprobarCita();
   }
-}
+  }
+
+  aprobarCita(){
+    const data = {
+      id: this.infoCita._id,
+      url: ''
+    }
+
+    this.service.approveDate(data).subscribe(
+      (res)=>{
+
+      }
+    )
+  }
 
   getVal(razon: any){
     console.log(razon);
