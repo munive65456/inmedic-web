@@ -1,122 +1,57 @@
-<div
-  class="modal fade modal-dialog-scrollable"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <img src="assets/build/images/icons/logo.png" alt="" />
-        <h5 class="modal-title" id="exampleModalLabel">
-          Solicite su cita aquí
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="name">Nombre Completo:</label>
-            <input
-              disabled
-              type="text"
-              class="form-control"
-              formControlName="name"
-              id="name"
-              placeholder="{{ infoCita?.name }}"
-            />
-          </div>
-          <div class="form-group">
-            <label for="cc">CC:</label>
-            <input
-              disabled
-              type="text"
-              class="form-control"
-              formControlName="cc"
-              id="cc"
-              placeholder="{{ infoCita?.DocumentNumber }}"
-            />
-          </div>
-          <div class="form-group">
-            <label for="age">age</label>
-            <input
-              disabled
-              type="text"
-              class="form-control"
-              formControlName="age"
-              id="age"
-              placeholder="{{ infoCita?.age }}"
-            />
-          </div>
-          <div class="form-group">
-            <label for="date">date</label>
-            <input
-              disabled
-              type="text"
-              class="form-control"
-              formControlName="date"
-              id="date"
-              placeholder="{{ infoCita?.date }}"
-            />
-          </div>
-          <div class="form-group">
-            <label for="time">hora</label>
-            <input
-              disabled
-              type="text"
-              class="form-control"
-              formControlName="time"
-              id="time"
-              placeholder="{{ infoCita?.hour }}"
-            />
-          </div>
-          <div class="form-group">
-            <label for="description">Descripción (opcional):</label>
-            <textarea
-              disabled
-              class="form-control"
-              formControlName="description"
-              id="description"
-              placeholder="{{ infoCita?.observation }}"
-            ></textarea>
-          </div>
-          <div class="dropdowns">
-            <div class="form-group">
-              <label for="service">Servicio seleccionado</label>
-              <textarea
-                disabled
-                class="form-control"
-                formControlName="service"
-                id="service"
-                placeholder="{{ infoCita?.services }}"
-              ></textarea>
+<div class="modal fade modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="assets/build/images/icons/logo.png" alt="" />
+                <h5 class="modal-title" id="exampleModalLabel">
+                    Solicite su cita aquí
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="form-group">
-              <label for="modalidad">modalidad seleccionada</label>
-              <textarea
-                disabled
-                class="form-control"
-                formControlName="service"
-                id="service"
-                placeholder="{{ infoCita?.tipoConsult }}"
-              ></textarea>
-            </div>
-          </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nombre Completo:</label>
+                        <input disabled type="text" class="form-control" formControlName="name" id="name" placeholder="{{ infoCita?.name }}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="cc">CC:</label>
+                        <input disabled type="text" class="form-control" formControlName="cc" id="cc" placeholder="{{ infoCita?.DocumentNumber }}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="age">age</label>
+                        <input disabled type="text" class="form-control" formControlName="age" id="age" placeholder="{{ infoCita?.age }}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="date">date</label>
+                        <input disabled type="text" class="form-control" formControlName="date" id="date" placeholder="{{ infoCita?.date }}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="time">hora</label>
+                        <input disabled type="text" class="form-control" formControlName="time" id="time" placeholder="{{ infoCita?.hour }}" />
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Descripción (opcional):</label>
+                        <textarea disabled class="form-control" formControlName="description" id="description" placeholder="{{ infoCita?.observation }}"></textarea>
+                    </div>
+                    <div class="dropdowns">
+                        <div class="form-group">
+                            <label for="service">Servicio seleccionado</label>
+                            <textarea disabled class="form-control" formControlName="service" id="service" placeholder="{{ infoCita?.services }}"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalidad">modalidad seleccionada</label>
+                            <textarea disabled class="form-control" formControlName="service" id="service" placeholder="{{ infoCita?.tipoConsult }}"></textarea>
+                        </div>
+                    </div>
 
-          <div class="bottom-buttons">
-            <button type="submit" class="btn btn-primary">
-              Enviar solicitud
-            </button>
-          </div>
-        </form>
-        <div class="date-picker"></div>
-      </div>
+                    <div class="bottom-buttons">
+                        <button type="button" class="btn btn-primary">Aceptar solicitud</button>
+                        <button type="button" class="btn btn-info">Rechazar solicitud</button>
+                    </div>
+                </form>
+                <div class="date-picker"></div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
