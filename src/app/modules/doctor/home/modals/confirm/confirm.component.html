@@ -10,7 +10,7 @@
       <div class="modal-header">
         <img src="assets/build/images/icons/logo.png" alt="" />
         <h5 class="modal-title" id="exampleModalLabel">
-          Solicite su cita aquí
+          Acepte o rechace la cita
         </h5>
         <button
           type="button"
@@ -20,11 +20,11 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form *ngIf="showform">
           <div class="form-group">
             <label for="name">Nombre Completo:</label>
             <input
-              [disabled]="true"
+              disabled
               type="text"
               class="form-control"
               formControlName="name"
@@ -35,7 +35,7 @@
           <div class="form-group">
             <label for="cc">CC:</label>
             <input
-              [disabled]="true"
+              disabled
               type="text"
               class="form-control"
               formControlName="cc"
@@ -46,7 +46,7 @@
           <div class="form-group">
             <label for="age">age</label>
             <input
-              [disabled]="true"
+              disabled
               type="text"
               class="form-control"
               formControlName="age"
@@ -57,7 +57,7 @@
           <div class="form-group">
             <label for="date">date</label>
             <input
-              [disabled]="true"
+              disabled
               type="text"
               class="form-control"
               formControlName="date"
@@ -68,7 +68,7 @@
           <div class="form-group">
             <label for="time">hora</label>
             <input
-              [disabled]="true"
+              disabled
               type="text"
               class="form-control"
               formControlName="time"
@@ -79,7 +79,7 @@
           <div class="form-group">
             <label for="description">Descripción (opcional):</label>
             <textarea
-              [disabled]="true"
+              disabled
               class="form-control"
               formControlName="description"
               id="description"
@@ -90,7 +90,7 @@
             <div class="form-group">
               <label for="service">Servicio seleccionado</label>
               <textarea
-                [disabled]="true"
+                disabled
                 class="form-control"
                 formControlName="service"
                 id="service"
@@ -100,7 +100,7 @@
             <div class="form-group">
               <label for="modalidad">modalidad seleccionada</label>
               <textarea
-                [disabled]="true"
+                disabled
                 class="form-control"
                 formControlName="service"
                 id="service"
@@ -110,22 +110,49 @@
           </div>
 
           <div class="bottom-buttons">
-            <button
-              type="button"
-              class="btn btn-success"
-              (click)="approveDate()"
-              data-bs-dismiss="modal"
-            >
+            <button type="button" class="btn btn-primary" (click)="aceptar()">
               Aceptar solicitud
             </button>
-            <button type="button" class="btn btn-danger">
+            <button type="button" class="btn btn-info" (click)="rechazar()">
               Rechazar solicitud
             </button>
           </div>
         </form>
+
+        <div *ngIf="!showform" class="form-group">
+          <label for="modalidad">Escriba porqué rechaza la cita</label>
+          <textarea
+            #razon
+            (change)="getVal(razon.value)"
+            class="form-control"
+            formControlName="reject"
+            id="reject"
+            placeholder="Razón del rechazo de la cita"
+          ></textarea>
+        </div>
+
+        <div *ngIf="!showform" class="bottom-buttons">
+          <button type="button" class="btn btn-success" (click)="enviar()">
+            Enviar respuesta
+          </button>
+        </div>
+
         <div class="date-picker"></div>
       </div>
     </div>
+
+    <div class="bottom-buttons">
+      <button
+        type="button"
+        class="btn btn-success"
+        (click)="approveDate()"
+        data-bs-dismiss="modal"
+      >
+        Aceptar solicitud
+      </button>
+      <button type="button" class="btn btn-danger">Rechazar solicitud</button>
+    </div>
+    <div class="date-picker"></div>
   </div>
 </div>
 
