@@ -1,40 +1,42 @@
-import { Component, OnInit, OnChanges, ViewChild, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { SearchService } from 'src/app/modules/user/services/search.service';
 
 @Component({
   selector: 'app-create-request',
   templateUrl: './create-request.component.html',
   styleUrls: ['./create-request.component.scss']
 })
-export class CreateRequestComponent implements OnInit, OnChanges {
+export class CreateRequestComponent implements OnInit{
 
   form: FormGroup;
   check: FormGroup;
   printedOption: string;
   show: boolean;
 
-  name: string;
-  cc: string;
-  age: string;
+  doctorID: string
 
   success: number;
   error: number;
 
   disabled = true;
 
+  @Input() doctorServices: any;
+
 
   requestForm = {
     name: "",
-    cc: "",
+    DocumentNumber: "",
     age: "",
     email: "",
     date: "",
-    time: "",
-    description: "",
-    servicioSelected: "",
-    modalidadSelected: "",
-    currentUser: false,
-    id: ""
+    hour: "",
+    observation: "",
+    services: "",
+    tipoConsult: "",
+    checkBox: false,
+    idDoctor: localStorage.getItem('user.userId')!,
   }
 
 
@@ -49,15 +51,13 @@ export class CreateRequestComponent implements OnInit, OnChanges {
     {name: "virtual", value: 1}
   ]
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private searchService: SearchService, private formBuilder: FormBuilder, private route: ActivatedRoute,) {
     this.show = true;
     this.success = 1;
     this.error = 1;
+    console.log("Doctor Info => "+this.doctorServices);
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.check.get('checkbox')?.value);
-  }
 
   checkboxChange(){
     console.log(this.check.get('checkbox')?.value);
@@ -65,6 +65,9 @@ export class CreateRequestComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    this.auxInit();
+    console.log("Doctor Info => "+this.doctorServices);
+    
     this.check = this.formBuilder.group({
       checkbox: [''],
     });
@@ -95,61 +98,83 @@ export class CreateRequestComponent implements OnInit, OnChanges {
     })
   }
 
-
-  printServicio() {
-    console.log(this.servicios[this.form.get('servicioSelected')?.value].name);
-  }
-
-  printModalidad() {
-  }
-
   printDate(){
     // console.log(this.form.get('date')?.value);
     // console.log(this.form.get('time')?.value);
   }
 
+  auxInit(){
+    this.route.params.subscribe((res:any) =>{
+      this.doctorID = res.id;
+    })
+  }
+
+
   submit(){
     if(this.check.get('checkbox')?.value === false){
       //use current user info
-      if(this.form.get('date')?.value != "" && this.form.get('time')?.value != "" && this.form.get('description')?.value != "" && this.form.get('servicioSelected')?.value != null && this.form.get('modalidadSelected')?.value != null){
+      //if(this.form.get('date')?.value != "" && this.form.get('time')?.value != "" && this.form.get('description')?.value != "" && this.form.get('servicioSelected')?.value != null && this.form.get('modalidadSelected')?.value != null){
         this.requestForm = {
           name: "",
-          cc: "",
+          DocumentNumber: "",
           age: "",
           email: "",
           date: this.form.get('date')?.value,
-          time: this.form.get('time')?.value,
-          description: this.form.get('description')?.value,
-          servicioSelected: this.form.get('servicioSelected')?.value,
-          modalidadSelected: this.form.get('modalidadSelected')?.value,
-          currentUser: true,
-          id: localStorage.getItem('user.userId')!,
+          hour: this.form.get('time')?.value,
+          observation: this.form.get('description')?.value,
+          services: this.form.get('servicioSelected')?.value,
+          tipoConsult: this.form.get('modalidadSelected')?.value,
+          checkBox: false,
+          //idDoctor: localStorage.getItem('user.userId')!,
+          idDoctor: this.doctorID,
         }
-        this.success = 2;// se muestra success
-        alert('success')
+        try{
+          this.searchService.createRequest(this.requestForm)
+          .subscribe(
+            (res:any)=>{
+              this.success = 2 // se muestra success
+            }
+          )
+        }catch(err){
+          console.log('ERR =>',err)
+        }
+
+        this.success = 2;// se muestra success        
         //call service here
-      }
+      //}
     }else {
       //send form info
-      if(this.form.get('name')?.value != "" && this.form.get('cc')?.value != "" && this.form.get('age')?.value != "" && this.form.get('email')?.value != "" && this.form.get('date')?.value != "" && this.form.get('time')?.value != "" && this.form.get('description')?.value != "" && this.form.get('servicioSelected')?.value != "" && this.form.get('modalidadSelected')?.value != "" && localStorage.getItem('user.userId') != null){
+      //if(this.form.get('name')?.value != "" && this.form.get('cc')?.value != "" && this.form.get('age')?.value != "" && this.form.get('email')?.value != "" && this.form.get('date')?.value != "" && this.form.get('time')?.value != "" && this.form.get('description')?.value != "" && this.form.get('servicioSelected')?.value != "" && this.form.get('modalidadSelected')?.value != "" && localStorage.getItem('user.userId') != null){
         this.requestForm = {
           name: this.form.get('name')?.value,
-          cc: this.form.get('cc')?.value,
+          DocumentNumber: this.form.get('cc')?.value,
           age: this.form.get('age')?.value,
+          email: this.form.get('email')?.value,
           date: this.form.get('date')?.value,
-          email: this.form.get('date')?.value,
-          time: this.form.get('time')?.value,
-          description: this.form.get('description')?.value,
-          servicioSelected: this.form.get('servicioSelected')?.value,
-          modalidadSelected: this.form.get('modalidadSelected')?.value,
-          currentUser: false,
-          id: localStorage.getItem('user.userId')!,
+          hour: this.form.get('time')?.value,
+          observation: this.form.get('description')?.value,
+          services: this.form.get('servicioSelected')?.value,
+          tipoConsult: this.form.get('modalidadSelected')?.value,
+          checkBox: false,
+          //idDoctor: localStorage.getItem('user.userId')!,
+          idDoctor: this.doctorID,
         }
-        this.success = 2 // se muestra success
+        try{
+          this.searchService.createRequest(this.requestForm)
+          .subscribe(
+            (res:any)=>{
+              console.log(res);
+              this.success = 2 // se muestra success
+            }
+          )
+        }catch(err){
+          console.log('ERR =>',err)
+        }
+        
         //call service here
-      }else{
-        this.success = 3; // se muestra error
-      }
+      // }else{
+      //   this.success = 3; // se muestra error
+      // }
     }
   }
 

@@ -8,9 +8,18 @@ import { AuthService } from '../../login/services/auth.service';
 })
 export class PublicHeaderComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  showNotifications = true;
+
+  constructor(private authService: AuthService) {
+    if(localStorage.getItem('user.role')! === 'doctor'){
+      this.showNotifications = false;
+    }
+  }
 
   ngOnInit(): void {
+    if(localStorage.getItem('user.role')! === 'doctor'){
+      this.showNotifications = false;
+    }
   }
 
   logOut(){
