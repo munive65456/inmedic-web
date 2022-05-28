@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
 
   getPage(page: string){
     this.page = page;
-    console.log('PAGE => ',page)
   }
 
 }

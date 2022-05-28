@@ -10,7 +10,8 @@ const searchMethods={
 }
 
 const doctorEnd = {
-  getAppointments: 'appointment/getByDoctor/'
+  getAppointments: 'appointment/getByDoctor/',
+  approveDate: 'appointment/approve/'
 }
 
 export const host = {

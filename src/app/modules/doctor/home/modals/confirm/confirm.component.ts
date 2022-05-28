@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-confirm',
@@ -7,13 +7,22 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ConfirmComponent implements OnInit {
 
+  @ViewChild('approveDateBtn')
+  btnApproveModal: ElementRef;
+
   @Input() infoCita: any;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.infoCita);
-    
+
+  }
+
+  approveDate(){
+    if(this.infoCita?.tipoConsult === 'virtual'){
+
+      this.btnApproveModal.nativeElement.click();
+    }
   }
 
 }
