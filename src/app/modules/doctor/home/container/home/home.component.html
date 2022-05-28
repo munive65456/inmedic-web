@@ -7,15 +7,15 @@
     <div class="approved">
       <h4>Solicitudes aprobadas</h4>
       <div *ngIf="true">
-        <div *ngFor="let a of approved" class="">
+        <div *ngFor="let item of approvedAppoinments" class="">
           <div class="card">
             <div class="card-title">
-              <h5>Appoinment name</h5>
-              <span>24 años</span>
+              <h5>{{ item.name }}</h5>
+              <span>{{ item.age || item.edad }} años</span>
             </div>
             <div class="card-contain">
-              <span class="service">Servicio de interés</span>
-              <span class="modality">Virtual</span>
+              <span class="service">{{ item.services }}</span>
+              <span class="modality">{{ item.tipoConsult }}</span>
             </div>
             <button type="button" class="info btn btn-primary">
               Más información

@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
   loader = false;
 
   pendingAppoinments: any[] = [];
+  approvedAppoinments: any[] = [];
 
   constructor(private doctorService: DoctorService) { }
 
@@ -57,6 +58,20 @@ export class HomeComponent implements OnInit {
                   filtered.edad = this.calculateAge(filtered.birthDay);
                 }
                 this.pendingAppoinments.push(filtered)
+              }else if(filtered.status === 'approved'){
+                filtered.name = this.shortName(filtered.name);
+                if(filtered.edad){
+
+                  filtered.edad = this.calculateAge(filtered.edad);
+                }
+                if(filtered.age){
+                  filtered.age = this.calculateAge(filtered.age);
+                }
+                if(filtered.birthDay){
+
+                  filtered.edad = this.calculateAge(filtered.birthDay);
+                }
+                this.approvedAppoinments.push(filtered)
               }
             } )
             console.log('RES => ',this.pendingAppoinments)
@@ -71,7 +86,7 @@ export class HomeComponent implements OnInit {
   shortName(name:string):string{
     const size = name?.length;
     if(size > 1){
-      const tempName = name.split(' ')[0] + ' '+ name.split(' ')[0];
+      const tempName = name.split(' ')[0] + ' '+ name.split(' ')[1];
       return tempName;
     }else if(size === 1){
       return name;
