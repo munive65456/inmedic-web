@@ -51,7 +51,11 @@
               <span class="service">{{ item.services }}</span>
               <span class="modality">{{ item.tipoConsult }}</span>
             </div>
-            <button type="button" class="info btn btn-primary">
+            <button
+              type="button"
+              class="info btn btn-primary"
+              (click)="showModal(item)"
+            >
               Más información
             </button>
           </div>
@@ -77,3 +81,15 @@
     </div>
   </div>
 </div>
+
+<!-- Button trigger modal -->
+<button
+  #btnDetails
+  type="button"
+  hidden
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+></button>
+
+<app-confirm [infoCita]="infoCita"></app-confirm>

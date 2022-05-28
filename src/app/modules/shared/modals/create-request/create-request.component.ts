@@ -15,6 +15,9 @@ export class CreateRequestComponent implements OnInit{
   printedOption: string;
   show: boolean;
 
+  modalidad: string;
+  servicio: string;
+
   doctorID: string
 
   success: number;
@@ -36,6 +39,7 @@ export class CreateRequestComponent implements OnInit{
     services: "",
     tipoConsult: "",
     checkBox: false,
+    idClient: localStorage.getItem('user.userId')!,
     idDoctor: localStorage.getItem('user.userId')!,
   }
 
@@ -59,10 +63,10 @@ export class CreateRequestComponent implements OnInit{
   }
 
 
-  checkboxChange(){
-    console.log(this.check.get('checkbox')?.value);
+  // checkboxChange(){
+  //   console.log(this.check.get('checkbox')?.value);
 
-  }
+  // }
 
   ngOnInit(): void {
     this.auxInit();
@@ -125,7 +129,7 @@ export class CreateRequestComponent implements OnInit{
           services: this.form.get('servicioSelected')?.value,
           tipoConsult: this.form.get('modalidadSelected')?.value,
           checkBox: false,
-          //idDoctor: localStorage.getItem('user.userId')!,
+          idClient: localStorage.getItem('user.userId')!,
           idDoctor: this.doctorID,
         }
         try{
@@ -145,7 +149,13 @@ export class CreateRequestComponent implements OnInit{
     }else {
       //send form info
       //if(this.form.get('name')?.value != "" && this.form.get('cc')?.value != "" && this.form.get('age')?.value != "" && this.form.get('email')?.value != "" && this.form.get('date')?.value != "" && this.form.get('time')?.value != "" && this.form.get('description')?.value != "" && this.form.get('servicioSelected')?.value != "" && this.form.get('modalidadSelected')?.value != "" && localStorage.getItem('user.userId') != null){
-        this.requestForm = {
+        
+        if(this.form.get('modalidadSelected')?.value == 0){
+          this.modalidad = "presencial"
+        }else{
+          this.modalidad = "virtual"
+        }
+      this.requestForm = {
           name: this.form.get('name')?.value,
           DocumentNumber: this.form.get('cc')?.value,
           age: this.form.get('age')?.value,
@@ -154,9 +164,9 @@ export class CreateRequestComponent implements OnInit{
           hour: this.form.get('time')?.value,
           observation: this.form.get('description')?.value,
           services: this.form.get('servicioSelected')?.value,
-          tipoConsult: this.form.get('modalidadSelected')?.value,
+          tipoConsult: this.modalidad,
           checkBox: false,
-          //idDoctor: localStorage.getItem('user.userId')!,
+          idClient: localStorage.getItem('user.userId')!,
           idDoctor: this.doctorID,
         }
         try{

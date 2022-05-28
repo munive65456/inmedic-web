@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DoctorService } from '../../../services/doctor.service';
 
 @Component({
@@ -7,6 +7,11 @@ import { DoctorService } from '../../../services/doctor.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  @ViewChild('btnDetails')
+  btnModal: ElementRef;
+
+  infoCita: any;
 
   approved = [
     { name: "Munive", date: "12-04-2022", text: "Ad nostrud dolore magna excepteur sit qui reprehenderit elit ad fugiat Lorem aute. Fugiat nulla cillum enim irure id magna ea eiusmod. Enim exercitation anim officia amet labore ad. Eiusmod tempor dolor occaecat quis incididunt aute. Tempor sunt aliquip fugiat ipsum ea minim quis fugiat. Sint ea veniam irure cillum ea sint Lorem ad.Id nulla commodo nisi est officia reprehenderit irure aliqua quis duis deserunt fugiat ad tempor." },
@@ -128,7 +133,12 @@ export class HomeComponent implements OnInit {
        return edad + 1 + ''
 
     return edad + ''
+  }
 
-}
+  showModal(info: any){
+    console.log(info);
+    this.infoCita = info;
+    this.btnModal.nativeElement.click();
+  }
 
 }
