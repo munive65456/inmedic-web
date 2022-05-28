@@ -18,4 +18,14 @@ export class DoctorService{
       }
     )
   }
+
+  rechazarCita(params:any){
+    return this.http.post(
+      environment.URL_GLOBAL + environment.host.ms_security.searchMethods.rechazarCita,
+      params,
+      {
+        headers: this.authService.getBearerToken()
+      }
+    )
+  }
 }

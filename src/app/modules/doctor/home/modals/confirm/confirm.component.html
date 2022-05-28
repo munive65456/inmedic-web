@@ -4,12 +4,12 @@
             <div class="modal-header">
                 <img src="assets/build/images/icons/logo.png" alt="" />
                 <h5 class="modal-title" id="exampleModalLabel">
-                    Solicite su cita aquí
+                    Acepte o rechace la cita
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form *ngIf="showform">
                     <div class="form-group">
                         <label for="name">Nombre Completo:</label>
                         <input disabled type="text" class="form-control" formControlName="name" id="name" placeholder="{{ infoCita?.name }}" />
@@ -46,10 +46,20 @@
                     </div>
 
                     <div class="bottom-buttons">
-                        <button type="button" class="btn btn-primary">Aceptar solicitud</button>
-                        <button type="button" class="btn btn-info">Rechazar solicitud</button>
+                        <button type="button" class="btn btn-primary" (click)="aceptar()">Aceptar solicitud</button>
+                        <button type="button" class="btn btn-info" (click)="rechazar()">Rechazar solicitud</button>
                     </div>
                 </form>
+
+                <div *ngIf="!showform" class="form-group">
+                    <label for="modalidad">Escriba porqué rechaza la cita</label>
+                    <textarea #razon (change)="getVal(razon.value)" class="form-control" formControlName="reject" id="reject" placeholder="Razón del rechazo de la cita"></textarea>
+                </div>
+
+                <div *ngIf="!showform" class="bottom-buttons">
+                    <button type="button" class="btn btn-success" (click)="enviar()">Enviar respuesta</button>
+                </div>
+
                 <div class="date-picker"></div>
             </div>
         </div>

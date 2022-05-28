@@ -6,7 +6,8 @@ const searchMethods={
   globalSearch: 'client/services/',
   profileDoctor: 'client/profile/',
   createRequest: 'client/cita/',
-  signup: 'client/signup'
+  signup: 'client/signup',
+  rechazarCita: 'appointment/reject'
 }
 
 const doctorEnd = {

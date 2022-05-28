@@ -4,6 +4,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './container/home/home.component';
 import { ConfirmComponent } from './modals/confirm/confirm.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { ConfirmComponent } from './modals/confirm/confirm.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class HomeModule { }
