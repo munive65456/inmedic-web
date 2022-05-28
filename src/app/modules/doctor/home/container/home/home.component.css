@@ -46,20 +46,45 @@ h4 {
 }
 
 .card {
-    margin-bottom: 10px;
-    border: 1px solid #00B0FF;
+    margin: 30px;
     border-radius: 8px;
     margin-left: 20px;
     margin-right: 20px;
     min-width: 580px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    -webkit-box-shadow: 0 10px 23px rgba(63, 175, 255, 0.4);
+      -moz-box-shadow: 0px 0px 29px -18px rgba(63, 175, 255, 0.80);
+      box-shadow: 0 10px 23px rgb(61 174 255 /30%);
+
 }
 
-.card-body a {
-    background-color: #00B0FF;
-    border-color: #00B0FF;
+.card-title{
+  margin: 12px;
 }
 
-:hover.card-body a {
-    background-color: #0286c4;
-    border-color: #0286c4;
+.card-contain{
+  height: 100%;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
 }
+
+.info{
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 50px;
+  background-color: #00B0FF;
+  margin-right: 12px;
+}
+
+.info:hover{
+  background-color: #017cb5;
+}
+
+.service{
+  margin-bottom: 10px;
+}
+
+

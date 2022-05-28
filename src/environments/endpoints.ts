@@ -7,8 +7,15 @@ const searchMethods={
   profileDoctor: 'client/profile/'
 }
 
+const doctorEnd = {
+  getAppointments: 'appointment/getByDoctor/'
+}
+
 export const host = {
   ms_security:{
     methods: securityMethods, searchMethods
+  },
+  appointments:{
+    methods: doctorEnd
   }
 }

@@ -54,9 +54,9 @@ export class DoctorPreviewComponent implements OnInit {
       this.searchService.getProfileDoctor(this.doctorID)
       .subscribe(
         (res:any)=>{
-          this.doctorInfo = res[0];
+          // console.log(first)
+          this.doctorInfo = res.profileDoctor[0];
           this.loader = false;
-          console.log('RESPONSE => ',this.doctorInfo)
         }
       )
     }catch(err){

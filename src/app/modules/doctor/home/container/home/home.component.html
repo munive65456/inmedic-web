@@ -1,57 +1,79 @@
 <app-public-header></app-public-header>
 <div class="title">
-    <h1>Bienvenido</h1>
+  <h1>Bienvenido</h1>
 </div>
 <div class="main">
-    <div class="column">
-        <div class="approved">
-            <h4>Solicitudes aprobadas</h4>
-            <div *ngIf="true">
-                <div *ngFor="let a of approved" class="">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
+  <div class="column">
+    <div class="approved">
+      <h4>Solicitudes aprobadas</h4>
+      <div *ngIf="true">
+        <div *ngFor="let a of approved" class="">
+          <div class="card">
+            <div class="card-title">
+              <h5>Appoinment name</h5>
+              <span>24 años</span>
             </div>
-            <div *ngIf="false">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Nunguna solicitud ha sido aprobada</h5>
-                        <p class="card-text">En esta parte podrá observar las citas que han sido aprobadas por usted</p>
-                    </div>
-                </div>
+            <div class="card-contain">
+              <span class="service">Servicio de interés</span>
+              <span class="modality">Virtual</span>
             </div>
+            <button type="button" class="info btn btn-primary">
+              Más información
+            </button>
+          </div>
         </div>
-    </div>
-    <div class="bar"></div>
-    <div class="column">
-        <div class="pending">
-            <h4>Solicitudes pendientes</h4>
-            <div *ngIf="true">
-                <div *ngFor="let p of pending" class="">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural</p>
-                            <a class="btn btn-primary">Aprobar solicitud</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div *ngIf="false">
-                <div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Aún no tiene solicitudes pendientes</h5>
-                            <p class="card-text">En este apartado podrá observar las solicitudes que le han hecho y no han sido aprobadas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div *ngIf="false">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Nunguna solicitud ha sido aprobada</h5>
+            <p class="card-text">
+              En esta parte podrá observar las citas que han sido aprobadas por
+              usted
+            </p>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  <div class="bar"></div>
+  <div class="column">
+    <div class="pending">
+      <h4>Solicitudes pendientes</h4>
+      <div *ngIf="true">
+        <div *ngFor="let item of pendingAppoinments" class="">
+          <div class="card">
+            <div class="card-title">
+              <h5>{{ item.name }}</h5>
+              <span>{{ item.age || item.edad }} años</span>
+            </div>
+            <div class="card-contain">
+              <span class="service">{{ item.services }}</span>
+              <span class="modality">{{ item.tipoConsult }}</span>
+            </div>
+            <button type="button" class="info btn btn-primary">
+              Más información
+            </button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="false">
+        <div>
+          <div class="card">
+            <div class="card-title">
+              <h5>Appoinment name</h5>
+              <span>24 años</span>
+            </div>
+            <div class="card-contain">
+              <span class="service">Servicio de interés</span>
+              <span class="modality">Virtual</span>
+            </div>
+            <button type="button" class="info btn btn-primary">
+              Más información
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
