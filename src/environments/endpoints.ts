@@ -5,7 +5,8 @@ const securityMethods={
 const searchMethods={
   globalSearch: 'client/services/',
   profileDoctor: 'client/profile/',
-  createRequest: 'client/cita/'
+  createRequest: 'client/cita/',
+  signup: 'client/signup'
 }
 
 const doctorEnd = {

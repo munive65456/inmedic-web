@@ -1,270 +1,111 @@
 <div class="container">
-  <div class="pager">
-    <img
-      *ngIf="page != 1"
-      src="assets/build/images/numbers/number-one-black.png"
-      alt=""
-    />
-    <img
-      *ngIf="page === 1"
-      src="assets/build/images/numbers/number-one-blue.png"
-      alt=""
-    />
-    <img
-      *ngIf="page != 2"
-      src="assets/build/images/numbers/number-two-black.png"
-      alt=""
-    />
-    <img
-      *ngIf="page === 2"
-      src="assets/build/images/numbers/number-two-blue.png"
-      alt=""
-    />
-    <img
-      *ngIf="page != 3"
-      src="assets/build/images/numbers/number-three-black.png"
-      alt=""
-    />
-    <img
-      *ngIf="page === 3"
-      src="assets/build/images/numbers/number-three-blue.png"
-      alt=""
-    />
-  </div>
-  <div class="form-container">
-    <form class="col-6" (ngSubmit)="onSubmit()" [formGroup]="userForm">
-      <!-- Input Name -->
-      <input
-        *ngIf="page === 1"
-        type="name"
-        class="form-control"
-        placeholder="Nombre completo"
-        id="name"
-        name="name"
-        required
-        formControlName="name"
-      />
-      <div
-        *ngIf="
+    <div class="pager">
+        <img *ngIf="page != 1" src="assets/build/images/numbers/number-one-black.png" alt="" />
+        <img *ngIf="page === 1" src="assets/build/images/numbers/number-one-blue.png" alt="" />
+        <img *ngIf="page != 2" src="assets/build/images/numbers/number-two-black.png" alt="" />
+        <img *ngIf="page === 2" src="assets/build/images/numbers/number-two-blue.png" alt="" />
+        <img *ngIf="page != 3" src="assets/build/images/numbers/number-three-black.png" alt="" />
+        <img *ngIf="page === 3" src="assets/build/images/numbers/number-three-blue.png" alt="" />
+    </div>
+    <div class="form-container">
+        <form class="col-6" (ngSubmit)="onSubmit()" [formGroup]="userForm">
+            <!-- Input Name -->
+            <input *ngIf="page === 1" type="name" class="form-control" placeholder="Nombre completo" id="name" name="name" required formControlName="name" />
+            <div *ngIf="
             userForm.get('name')?.touched && userForm.get('name')?.errors?.['required'] && page === 1
-          "
-        class="invalid-form"
-      >
-        <img
-          src="assets/build/images/error.png"
-          alt=""
-          style="width: 24px; height: 24px"
-        />
-        <span>Este campo es obligatorio</span>
-      </div>
-      <!-- Input Email -->
-      <input
-        *ngIf="page === 1"
-        type="email"
-        class="form-control"
-        placeholder="Email"
-        id="email"
-        name="email"
-        required
-        formControlName="email"
-      />
-      <div
-        *ngIf="
+          " class="invalid-form">
+                <img src="assets/build/images/error.png" alt="" style="width: 24px; height: 24px" />
+                <span>Este campo es obligatorio</span>
+            </div>
+            <!-- Input Email -->
+            <input *ngIf="page === 1" type="email" class="form-control" placeholder="Email" id="email" name="email" required formControlName="email" />
+            <div *ngIf="
             userForm.get('email')?.touched && userForm.get('email')?.errors?.['required'] && page === 1
-          "
-        class="invalid-form"
-      >
-        <img
-          src="assets/build/images/error.png"
-          alt=""
-          style="width: 24px; height: 24px"
-        />
-        <span>Este campo es obligatorio</span>
-      </div>
-      <!-- Input Password -->
-      <input
-        *ngIf="page === 1"
-        type="password"
-        class="form-control"
-        placeholder="Contraseña"
-        id="password"
-        name="password"
-        required
-        formControlName="password"
-      />
-      <div
-        class="show-password"
-        *ngIf="userForm.get('password')!.value && page === 1"
-      >
-        {{ userForm.get("password")?.value }}
-      </div>
-      <div
-        *ngIf="
+          " class="invalid-form">
+                <img src="assets/build/images/error.png" alt="" style="width: 24px; height: 24px" />
+                <span>Este campo es obligatorio</span>
+            </div>
+            <!-- Input Password -->
+            <input *ngIf="page === 1" type="password" class="form-control" placeholder="Contraseña" id="password" name="password" required formControlName="password" />
+            <div class="show-password" *ngIf="userForm.get('password')!.value && page === 1">
+                {{ userForm.get("password")?.value }}
+            </div>
+            <div *ngIf="
             userForm.get('password')?.touched && userForm.get('password')?.errors?.['required'] && page === 1
-          "
-        class="invalid-form"
-      >
-        <img
-          src="assets/build/images/error.png"
-          alt=""
-          style="width: 24px; height: 24px"
-        />
-        <span>Este campo es obligatorio</span>
-      </div>
-      <div
-        *ngIf="
+          " class="invalid-form">
+                <img src="assets/build/images/error.png" alt="" style="width: 24px; height: 24px" />
+                <span>Este campo es obligatorio</span>
+            </div>
+            <div *ngIf="
             userForm.get('password')?.touched && userForm.get('password')?.errors?.['minlength'] && page === 1
-          "
-        class="invalid-form"
-      >
-        <img
-          src="assets/build/images/error.png"
-          alt=""
-          style="width: 24px; height: 24px"
-        />
-        <span>Mínimo 10 caracteres</span>
-      </div>
-      <!-- Input Phone -->
-      <input
-        *ngIf="page === 2"
-        type="number"
-        class="form-control"
-        placeholder="Celular"
-        id="phone"
-        name="phone"
-        formControlName="phone"
-      />
-      <div
-        *ngIf="
+          " class="invalid-form">
+                <img src="assets/build/images/error.png" alt="" style="width: 24px; height: 24px" />
+                <span>Mínimo 10 caracteres</span>
+            </div>
+            <!-- Input Phone -->
+            <input *ngIf="page === 2" type="number" class="form-control" placeholder="Celular" id="phone" name="phone" formControlName="phone" />
+            <div *ngIf="
           userForm.get('phone')?.touched &&
           !userForm.get('phone')?.value &&
           page === 2
-        "
-        class="invalid-form"
-      >
-        <img
-          src="assets/build/images/error.png"
-          alt=""
-          style="width: 24px; height: 24px"
-        />
-        <span>Este campo es obligatorio</span>
-      </div>
-      <!-- Input Address -->
-      <input
-        *ngIf="page === 2"
-        type="address"
-        class="form-control"
-        placeholder="Dirección"
-        id="address"
-        name="address"
-        formControlName="address"
-      />
-      <div
-        *ngIf="
+        " class="invalid-form">
+                <img src="assets/build/images/error.png" alt="" style="width: 24px; height: 24px" />
+                <span>Este campo es obligatorio</span>
+            </div>
+            <!-- Input Address -->
+            <input *ngIf="page === 2" type="address" class="form-control" placeholder="Dirección" id="address" name="address" formControlName="address" />
+            <div *ngIf="
           userForm.get('address')?.touched &&
           !userForm.get('address')?.value &&
           page === 2
-        "
-        class="invalid-form"
-      >
-        <img
-          src="assets/build/images/error.png"
-          alt=""
-          style="width: 24px; height: 24px"
-        />
-        <span>Este campo es obligatorio</span>
-      </div>
-      <!-- Input City And State-->
-      <div class="city-container">
-        <!-- Input City -->
-        <input
-          *ngIf="page === 2"
-          type="text"
-          class="form-control"
-          placeholder="Ciudad"
-          id="city"
-          name="city"
-          formControlName="city"
-          style="margin-right: 4px"
-        />
-        <!-- Input State -->
-        <input
-          *ngIf="page === 2"
-          type="text"
-          class="form-control"
-          placeholder="Departamento"
-          id="state"
-          name="state"
-          formControlName="state"
-        />
-      </div>
-      <div class="doc-container" *ngIf="page === 3">
-        <select name="doc" id="doc" class="form-select doc form-select-sm">
+        " class="invalid-form">
+                <img src="assets/build/images/error.png" alt="" style="width: 24px; height: 24px" />
+                <span>Este campo es obligatorio</span>
+            </div>
+            <!-- Input City And State-->
+            <div class="city-container">
+                <!-- Input City -->
+                <input *ngIf="page === 2" type="text" class="form-control" placeholder="Ciudad" id="city" name="city" formControlName="city" style="margin-right: 4px" />
+                <!-- Input State -->
+                <input *ngIf="page === 2" type="text" class="form-control" placeholder="País" id="country" name="country" formControlName="country" />
+            </div>
+            <div class="doc-container" *ngIf="page === 3">
+                <select name="doc" id="doc" class="form-select doc form-select-sm" formControlName="type">
           <option [selected]="true" value="C.C">C.C</option>
           <option value="T.I">T.I</option>
           <option value="Other">Otro</option>
         </select>
 
-        <input
-          type="number"
-          class="form-control"
-          placeholder="Número de documento"
-          id="document"
-          name="document"
-          formControlName="document"
-        />
-      </div>
+                <input type="number" class="form-control" placeholder="Número de documento" id="document" name="document" formControlName="document" />
+            </div>
 
-      <!-- Input Gender -->
-      <select
-        *ngIf="page === 3"
-        name="gender"
-        id="gender"
-        class="form-select gender form-select-sm"
-      >
+            <!-- Input Gender -->
+            <select *ngIf="page === 3" name="gender" id="gender" class="form-select gender form-select-sm" formControlName="genero">
         <option value="masculino">Masculino</option>
         <option value="femenino">Femenino</option>
         <option value="no">Prefiero no decirlo</option>
       </select>
 
-      <!-- Input Birthdate -->
-      <input
-        *ngIf="page === 3"
-        type="date"
-        class="form-control"
-        id="birthdate"
-        name="birthdate"
-        formControlName="birthdate"
-      />
-      <!-- Next Button -->
-      <div class="next-back-button">
-        <div class="login-button" *ngIf="page > 1" style="margin-right: 5px">
-          <button (click)="back()" class="btn-login" style="width: 100%">
+            <!-- Input Birthdate -->
+            <input *ngIf="page === 3" type="date" class="form-control" id="birthdate" name="birthdate" formControlName="birthdate" />
+            <!-- Next Button -->
+            <div class="next-back-button">
+                <div class="login-button" *ngIf="page > 1" style="margin-right: 5px">
+                    <button (click)="back()" class="btn-login" style="width: 100%">
             Atrás
           </button>
-        </div>
-        <div class="login-button" *ngIf="page < 3">
-          <button
-            (click)="next()"
-            type="submit"
-            class="btn-login"
-            [disabled]="userForm.invalid"
-            style="width: 100%"
-          >
+                </div>
+                <div class="login-button" *ngIf="page < 3">
+                    <button (click)="next()" type="submit" class="btn-login" [disabled]="userForm.invalid" style="width: 100%">
             Siguiente
           </button>
-        </div>
-        <div class="login-button" *ngIf="page === 3">
-          <button
-            type="submit"
-            class="btn-login"
-            [disabled]="userForm.invalid"
-            style="width: 100%"
-          >
+                </div>
+                <div class="login-button" *ngIf="page === 3">
+                    <button (click)="signup()" type="submit" class="btn-login" [disabled]="userForm.invalid" style="width: 100%">
             Registrarme
           </button>
-        </div>
-      </div>
-    </form>
-  </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

@@ -20,6 +20,13 @@ export class AuthService{
     )
   }
 
+  signup(info: any){
+    return this.http.post(
+      environment.URL_GLOBAL + environment.host.ms_security.searchMethods.signup,
+      info,
+    )
+  }
+
   saveLogin(
     accessToken: string,
     role: string,

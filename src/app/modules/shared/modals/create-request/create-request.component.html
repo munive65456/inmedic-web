@@ -28,7 +28,7 @@
                         <label for="cc">CC:</label>
                         <input type="text" class="form-control" formControlName="cc" id="cc" placeholder="Número de cédula" />
                     </div>
-                    <div class="form-group">
+                    <div *ngIf="!show" class="form-group">
                         <label for="age">Seleccione la fecha de nacimiento: </label>
                         <input type="date" class="form-control" formControlName="age" id="age" />
                     </div>
