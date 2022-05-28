@@ -13,9 +13,7 @@ export class CardPreviewComponent implements OnInit {
   infoDoctor: any;
 
   @Input() data: any;
-  constructor(private router: Router,
-              private searchService: SearchService,
-              private dataService: DataService) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

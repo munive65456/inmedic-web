@@ -1,5 +1,7 @@
 <div class="card col-8" (click)="seeDoctorInfo()">
-  <div class="profile">Profile</div>
+  <div class="profile">
+    <img [src]="data.perfil" alt="" />
+  </div>
   <div class="info">
     <div class="name">{{ data.name }}</div>
     <div class="preview">{{ data.description }}</div>
