@@ -59,19 +59,14 @@ export class CreateRequestComponent implements OnInit{
     this.show = true;
     this.success = 1;
     this.error = 1;
-    console.log("Doctor Info => "+this.doctorServices);
   }
 
 
-  // checkboxChange(){
-  //   console.log(this.check.get('checkbox')?.value);
-
-  // }
 
   ngOnInit(): void {
     this.auxInit();
     console.log("Doctor Info => "+this.doctorServices);
-    
+
     this.check = this.formBuilder.group({
       checkbox: [''],
     });
@@ -89,7 +84,6 @@ export class CreateRequestComponent implements OnInit{
     });
 
     this.check.get('checkbox')?.valueChanges.subscribe((r) => {
-      console.log(r);
       let name = this.form.get('name');
       let cc = this.form.get('cc');
       let age = this.form.get('age');
@@ -103,8 +97,6 @@ export class CreateRequestComponent implements OnInit{
   }
 
   printDate(){
-    // console.log(this.form.get('date')?.value);
-    // console.log(this.form.get('time')?.value);
   }
 
   auxInit(){
@@ -143,13 +135,13 @@ export class CreateRequestComponent implements OnInit{
           console.log('ERR =>',err)
         }
 
-        this.success = 2;// se muestra success        
+        this.success = 2;// se muestra success
         //call service here
       //}
     }else {
       //send form info
       //if(this.form.get('name')?.value != "" && this.form.get('cc')?.value != "" && this.form.get('age')?.value != "" && this.form.get('email')?.value != "" && this.form.get('date')?.value != "" && this.form.get('time')?.value != "" && this.form.get('description')?.value != "" && this.form.get('servicioSelected')?.value != "" && this.form.get('modalidadSelected')?.value != "" && localStorage.getItem('user.userId') != null){
-        
+
         if(this.form.get('modalidadSelected')?.value == 0){
           this.modalidad = "presencial"
         }else{
@@ -173,14 +165,13 @@ export class CreateRequestComponent implements OnInit{
           this.searchService.createRequest(this.requestForm)
           .subscribe(
             (res:any)=>{
-              console.log(res);
               this.success = 2 // se muestra success
             }
           )
         }catch(err){
           console.log('ERR =>',err)
         }
-        
+
         //call service here
       // }else{
       //   this.success = 3; // se muestra error

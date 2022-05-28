@@ -1,0 +1,37 @@
+<div
+  class="modal fade"
+  id="approveDate"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="approveDate"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Link de la reunión</h5>
+      </div>
+      <div class="modal-body">
+        <input
+          #inputLink
+          type="text"
+          placeholder="Link"
+          (change)="getLink(inputLink.value)"
+        />
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="aproveDateMethod()"
+          data-bs-dismiss="modal"
+        >
+          Enviar
+        </button>
+        <button type="button" data-bs-dismiss="modal" class="btn btn-danger">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

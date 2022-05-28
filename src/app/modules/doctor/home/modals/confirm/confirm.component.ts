@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { DoctorService } from '../../../services/doctor.service';
 
@@ -8,6 +8,9 @@ import { DoctorService } from '../../../services/doctor.service';
   styleUrls: ['./confirm.component.css']
 })
 export class ConfirmComponent implements OnInit {
+
+  @ViewChild('approveDateBtn')
+  btnApproveModal: ElementRef;
 
   @Input() infoCita: any;
 
@@ -23,11 +26,32 @@ export class ConfirmComponent implements OnInit {
   constructor(private service: DoctorService) { }
 
   ngOnInit(): void {
-    console.log(this.infoCita); 
+
+  }
+
+  approveDate(){
+    if(this.infoCita?.tipoConsult === 'virtual'){
+      this.btnApproveModal.nativeElement.click();
+  }else{
+    this.aprobarCita();
+  }
+  }
+
+  aprobarCita(){
+    const data = {
+      id: this.infoCita._id,
+      url: ''
+    }
+
+    this.service.approveDate(data).subscribe(
+      (res)=>{
+
+      }
+    )
   }
 
   getVal(razon: any){
-    console.log(razon); 
+    console.log(razon);
     this.razon = String(razon);
   }
 
@@ -41,7 +65,7 @@ export class ConfirmComponent implements OnInit {
 
   enviar(){
     console.log(this.razon);
-    
+
     this.params = {
       "id": this.infoCita._id,
       "reason": this.razon

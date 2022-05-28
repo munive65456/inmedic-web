@@ -9,7 +9,7 @@ import { DoctorRoutingModule } from './doctor-routing.module';
   imports: [
     CommonModule,
     DoctorRoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class DoctorModule { }

@@ -4,13 +4,15 @@ import { SharedModule } from '../../shared/shared.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './container/home/home.component';
 import { ConfirmComponent } from './modals/confirm/confirm.component';
+import { ApproveDateComponent } from './modals/approve-date/approve-date.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    ApproveDateComponent
   ],
   imports: [
     CommonModule,
