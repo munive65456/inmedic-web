@@ -28,16 +28,16 @@
                         <label for="cc">CC:</label>
                         <input type="text" class="form-control" formControlName="cc" id="cc" placeholder="Número de cédula" />
                     </div>
-                    <div *ngIf="!show" class="form-group">
-                        <label for="age">edad:</label>
-                        <input type="text" class="form-control" formControlName="age" id="age" placeholder="edad (número)" />
+                    <div class="form-group">
+                        <label for="age">Seleccione la fecha de nacimiento: </label>
+                        <input type="date" class="form-control" formControlName="age" id="age" />
                     </div>
                     <div *ngIf="!show" class="form-group">
                         <label for="age">email:</label>
                         <input type="email" class="form-control" formControlName="email" id="email" placeholder="email" />
                     </div>
                     <div class="form-group">
-                        <label for="date">Seleccione la fecha: </label>
+                        <label for="date">Seleccione la fecha de la cita: </label>
                         <input type="date" class="form-control" formControlName="date" id="date" />
                     </div>
                     <div class="form-group">
