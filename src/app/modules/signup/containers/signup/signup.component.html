@@ -1,22 +1,20 @@
 <div class="main">
-  <div class="left-container" @leftState>
-    <div class="main-home">
-      <app-home></app-home>
+    <div class="right-container" @rightState>
+        <div class="header-signup">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg>
+            <h1>Bienvenido</h1>
+        </div>
+        <div class="option-container mt-2">
+            <img src="assets/build/svg/profile_avatar.svg" alt="" />
+            <h3>Regístrate</h3>
+        </div>
+        <div class="options" *ngIf="options" @optionsState>
+            <div class="btn-options" (click)="selectRole()">Médico</div>
+            <div class="btn-options" (click)="selectRole()">Usuario</div>
+        </div>
+        <!-- <router-outlet></router-outlet> -->
+        <app-signup-client *ngIf="clientForm"></app-signup-client>
     </div>
-  </div>
-  <div class="right-container" @rightState>
-    <div class="header-signup">
-      <h1>Bienvenido</h1>
-    </div>
-    <div class="option-container mt-2">
-      <img src="assets/build/svg/profile_avatar.svg" alt="" />
-      <h3>Regístrate</h3>
-    </div>
-    <div class="options" *ngIf="options" @optionsState>
-      <div class="btn-options" (click)="selectRole()">Médico</div>
-      <div class="btn-options" (click)="selectRole()">Usuario</div>
-    </div>
-    <!-- <router-outlet></router-outlet> -->
-    <app-signup-client *ngIf="clientForm"></app-signup-client>
-  </div>
 </div>
