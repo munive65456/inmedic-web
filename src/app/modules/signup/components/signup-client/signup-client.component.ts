@@ -130,7 +130,7 @@ export class SignupClientComponent implements OnInit {
       .subscribe(
         (res:any)=>{
           alert('Usuario registrado exitosamente')
-          this.route.navigate(['../']);
+          this.route.navigate(['/login']);
         }
       )
     }catch(err){
