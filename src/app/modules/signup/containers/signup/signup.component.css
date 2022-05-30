@@ -22,9 +22,9 @@
     -moz-box-shadow: 0px 0px 29px -18px rgba(0, 0, 0, 0.80);
     box-shadow: 0 10px 23px rgb(0 0 0 / 25%);
     width: 30%;
-    margin-top: 45px;
-    height: 86vh;
-    min-height: 86vh;
+    margin-top: 34px;
+    height: 90vh;
+    min-height: 90vh;
     background: #FFFFFF;
 }
 
@@ -33,6 +33,21 @@
     flex-direction: row;
     padding-top: 15px;
     text-align: center;
+    align-items: center;
+}
+
+.header-signup svg {
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+}
+
+:hover.header-signup svg {
+    cursor: pointer;
+}
+
+.header-signup h1 {
+    padding-left: 58px;
 }
 
 .option-container {
