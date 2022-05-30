@@ -23,7 +23,6 @@
     justify-content: center;
     align-items: center;
     padding-right: 10px;
-    overflow: auto;
 }
 
 .pending {
@@ -32,7 +31,6 @@
     justify-content: center;
     align-items: center;
     padding-left: 10px;
-    overflow: auto;
 }
 
 .bar {
@@ -50,41 +48,53 @@ h4 {
     border-radius: 8px;
     margin-left: 20px;
     margin-right: 20px;
-    min-width: 650px;
+    min-width: 600px;
+    max-width: 600px;
+    width: 600px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     -webkit-box-shadow: 0 10px 23px rgba(63, 175, 255, 0.4);
-      -moz-box-shadow: 0px 0px 29px -18px rgba(63, 175, 255, 0.80);
-      box-shadow: 0 10px 23px rgb(61 174 255 /30%);
-
+    -moz-box-shadow: 0px 0px 29px -18px rgba(63, 175, 255, 0.80);
+    box-shadow: 0 10px 23px rgb(61 174 255 /30%);
 }
 
-.card-title{
-  margin: 12px;
+.card-title {
+    margin: 12px;
 }
 
-.card-contain{
-  height: 100%;
-  margin-top: 14px;
-  display: flex;
-  flex-direction: column;
+.card-title h5 {
+    font-size: 14px;
 }
 
-.info{
-  margin-top: auto;
-  margin-bottom: auto;
-  height: 50px;
-  background-color: #00B0FF;
-  margin-right: 12px;
+.card-title span {
+    font-size: 12px;
 }
 
-.info:hover{
-  background-color: #017cb5;
+.card-contain {
+    height: 100%;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
 }
 
-.service{
-  margin-bottom: 10px;
+.info {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 50px;
+    background-color: #00B0FF;
+    margin-right: 12px;
 }
 
+.info:hover {
+    background-color: #017cb5;
+}
 
+.service {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.modality {
+    font-size: 12px;
+}
