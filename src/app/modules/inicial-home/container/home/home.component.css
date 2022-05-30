@@ -181,10 +181,8 @@ main {
 }
 
 .icons-info img{
-  /* position: absolute; */
   width: 64px;
   border-radius: 50%;
-  /* border:3.5px solid #1db7ff; */
 }
 
 .icons-info .white{
@@ -270,10 +268,8 @@ main {
 }
 
 .icons-info2 img{
-  /* position: absolute; */
   width: 64px;
   border-radius: 50%;
-  /* border:3.5px solid #1db7ff; */
 }
 
 .icons-info2 .white{
@@ -315,44 +311,7 @@ main {
   font-size: 14px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 footer{
-  /* background-color: #00B0FF; */
-  /* background-color: #000 */
   background-color: #0286c4;
   width: 100%;
   height: 60vh;
@@ -361,7 +320,6 @@ footer{
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
 }
 
 .f-container{
@@ -380,9 +338,6 @@ footer{
 .f-logo{
   margin-right: 36px;
 }
-
-
-
 .ff{
   font-weight: 500;
   margin-right: 36px;
@@ -451,7 +406,3 @@ footer{
   color: #c5c5c5;
   font-size: 12px;
 }
-
-
-
-
