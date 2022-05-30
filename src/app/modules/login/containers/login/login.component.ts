@@ -90,12 +90,17 @@ export class LoginComponent implements OnInit {
         password: this.loginForm.get('password')?.value
       }
       try{
-        boolTemp = true;
         this.authService.login(user)
       .subscribe(
         (res: any)=>{
-          this.authService.saveLogin(res.data.accessToken,res.data.role,res.data.userId);
-          this.loginAccess(res.data.role);
+          if(res.data.accessToken){
+
+            this.authService.saveLogin(res.data.accessToken,res.data.role,res.data.userId);
+            this.loginAccess(res.data.role);
+          }else{
+            this.loader = false;
+            alert('Validar usuario y contraseña')
+          }
 
         }
       )
@@ -103,10 +108,7 @@ export class LoginComponent implements OnInit {
 
         console.log('ERROR => ',error)
       }
-      if(!boolTemp) {
-        this.loader = false;
-        alert('Usuario no encontrado');
-      }
+
 
     }
   }

@@ -51,7 +51,6 @@ export class ConfirmComponent implements OnInit {
   }
 
   getVal(razon: any){
-    console.log(razon);
     this.razon = String(razon);
   }
 
@@ -64,7 +63,6 @@ export class ConfirmComponent implements OnInit {
   }
 
   enviar(){
-    console.log(this.razon);
 
     this.params = {
       "id": this.infoCita._id,
@@ -74,7 +72,6 @@ export class ConfirmComponent implements OnInit {
       this.service.rechazarCita(this.params)
       .subscribe(
         (res:any)=>{
-          console.log(res);
           this.showform = true;
         }
       )

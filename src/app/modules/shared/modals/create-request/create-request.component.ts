@@ -65,7 +65,6 @@ export class CreateRequestComponent implements OnInit{
 
   ngOnInit(): void {
     this.auxInit();
-    console.log("Doctor Info => "+this.doctorServices);
 
     this.check = this.formBuilder.group({
       checkbox: [''],
