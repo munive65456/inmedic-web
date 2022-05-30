@@ -1,15 +1,12 @@
 <app-public-header></app-public-header>
 <app-loader *ngIf="loader"></app-loader>
 <div class="main" *ngIf="!loader">
-  <h1>Notificaciones</h1>
+    <h1>Notificaciones</h1>
+    <div class="no-results">
+        <p>Aún no tienes notificaciones</p>
+    </div>
 
-  <div class="notificaciones">
-    <app-notifications-cards
-      class="d-flex justify-content-center"
-    ></app-notifications-cards>
-  </div>
-</div>
-
-<div class="no-data" *ngIf="false">
-  <p>No tienes notificaciones pendientes</p>
+    <!-- <div class="notificaciones">
+        <app-notifications-cards class="d-flex justify-content-center"></app-notifications-cards>
+    </div> -->
 </div>
