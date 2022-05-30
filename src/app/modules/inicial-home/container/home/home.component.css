@@ -15,10 +15,6 @@ main {
   align-items: center;
 }
 
-:hover.logo {
-  cursor: pointer;
-}
-
 .logo span {
   margin-left: 7px;
   font-size: 32px;
@@ -309,100 +305,4 @@ main {
 
 .info .short-description span{
   font-size: 14px;
-}
-
-footer{
-  background-color: #0286c4;
-  width: 100%;
-  height: 60vh;
-  padding: 0 8px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.f-container{
-  height: 80%;
-  width: 80%;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.f-Container-ia{
-  display: flex;
-  width: 75%;
-}
-
-.f-logo{
-  margin-right: 36px;
-}
-.ff{
-  font-weight: 500;
-  margin-right: 36px;
-  padding-top: 16px;
-}
-
-.f-title{
-  color: #c5c5c5;
-  margin-bottom: 24px;
-}
-
-.f-info{
-  margin-bottom: 16px;
-  cursor: pointer;
-  color: #fff;
-}
-
-.f-info:hover{
-  color: #00ccff;
-}
-
-.f-social-media{
-  display: flex;
-}
-
-.f-social-media img{
-  margin-right: 8px;
-}
-
-.f-logo-sm img{
-  margin-top: 24px;
-  width: 54px;
-}
-.caja{
-  width: 30px;
-  height: 30px;
-}
-
-.f-Container-b{
-  height: 50px;
-  width: 80%;
-  margin-bottom: 25px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.fcb-left{
-  margin-left: 32px;
-}
-
-.fcb-left span{
-  font-size: 12px;
-  margin-right: 20px;
-  color: #c5c5c5;
-}
-
-.fcb-left span:hover{
-  color: #00ccff;
-  cursor: pointer;
-}
-
-.fcb-right{
-  display: flex;
-  flex-direction: column;
-  text-align: end;
-  color: #c5c5c5;
-  font-size: 12px;
 }
